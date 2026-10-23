@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#ffffff">
+<title>MOD WORLD — How to Install</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://img.modworlds.org">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    color-scheme: only light;
+    --bg    : #edf0f7;
+    --sur   : #f2f5fc;
+    --sd    : #c5c9d8;
+    --sl    : #ffffff;
+    --txt   : #1a1d2b;
+    --txt2  : #7a7e92;
+    --red   : #e8192c;
+    --ylw   : #ff9500;
+    --grn   : #1fa85a;
+    --neu-in : inset 4px 4px 10px var(--sd), inset -3px -3px 7px var(--sl);
+    --neu    : 8px 8px 18px var(--sd), -5px -5px 12px var(--sl);
+    --neu-sm : 4px 4px 10px var(--sd), -3px -3px 7px var(--sl);
+    --card3d : 0 2px 0 rgba(255,255,255,0.95) inset,
+               0 10px 22px rgba(0,0,0,0.11),
+               0 4px 8px rgba(0,0,0,0.07),
+               0 1px 3px rgba(0,0,0,0.05);
+    --logo3d : 0 6px 10px rgba(0,0,0,0.18),
+               0 14px 30px rgba(0,0,0,0.15),
+               0 2px 0 rgba(255,255,255,0.9) inset;
+    --font : 'Plus Jakarta Sans', 'Hind Siliguri', system-ui, -apple-system, sans-serif;
+    --ease : cubic-bezier(0.16, 1, 0.3, 1);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+html, body {
+    height: 100%;
+    background: var(--bg);
+    font-family: var(--font);
+    color: var(--txt);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body.loading .page.active { visibility: hidden; }
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--sd); border-radius: 10px; }
+.page {
+    display: none;
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    overscroll-behavior-y: contain;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    padding-bottom: 0;
+    will-change: scroll-position;
+}
+.page.active { display: block; }
+.hdr {
+    background: #ffffff;
+    padding: 12px 20px 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    transform: translateY(0);
+    will-change: transform;
+}
+.hdr-nav { display: flex; align-items: center; gap: 10px; }
+.hbtn {
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    background: var(--bg);
+    box-shadow: var(--neu-in);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--txt2);
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+.hbtn:active { transform: scale(0.92); box-shadow: var(--neu); }
+.hdr-title { font-size: 17px; font-weight: 900; letter-spacing: -0.2px; }
+.sec-label {
+    display: flex; align-items: center; gap: 10px;
+    padding: 20px 18px 10px;
+}
+.sec-label i {
+    width: 4px; height: 18px; border-radius: 4px;
+    background: linear-gradient(180deg, #ff4040, #cc0000);
+    box-shadow: 0 2px 6px rgba(232,25,44,0.35);
+}
+.sec-label h2 { font-size: 15.5px; font-weight: 900; letter-spacing: -0.1px; }
+.sec-label small { margin-left: auto; font-size: 10.5px; font-weight: 700; color: var(--txt2); }
+.video-container { padding: 0 14px; }
+.video-card {
+    background: #000;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--card3d);
+    position: relative;
+    aspect-ratio: 9/16;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    border: 3px solid #fff;
+}
+.video-card iframe { width: 100%; height: 100%; border: 0; display: block; background: #0d0f18; }
+.video-card video { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0f18; }
+.vp-big {
+    position: absolute; left: 50%; top: 50%;
+    width: 64px; height: 64px; margin: -32px 0 0 -32px;
+    border: none; border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(145deg, #ff4040, #cc0000);
+    box-shadow: 0 8px 20px rgba(232,25,44,0.4), inset 0 2px 2px rgba(255,255,255,0.4), inset 0 -2px 4px rgba(0,0,0,0.15);
+    transition: transform 0.15s ease, opacity 0.25s ease;
+    z-index: 3;
+}
+.vp-big:active { transform: scale(0.92); }
+.vp-big svg { width: 26px; height: 26px; fill: #fff; margin-left: 3px; }
+.video-card.playing .vp-big { opacity: 0; pointer-events: none; }
+.vp-spin {
+    position: absolute; left: 50%; top: 50%;
+    width: 38px; height: 38px; margin: -19px 0 0 -19px;
+    border: 3px solid rgba(255,255,255,0.25); border-top-color: #fff;
+    border-radius: 50%; opacity: 0; pointer-events: none; z-index: 2;
+    animation: vpSpin 0.8s linear infinite;
+}
+.video-card.loading .vp-spin { opacity: 1; }
+.video-card.loading .vp-big { opacity: 0; pointer-events: none; }
+@keyframes vpSpin { to { transform: rotate(360deg); } }
+.vp-bar {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 4;
+    display: flex; align-items: center; gap: 10px;
+    padding: 26px 12px 10px;
+    background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.62));
+    color: #fff; font-size: 11px; font-weight: 700;
+    transition: opacity 0.3s ease;
+}
+.video-card.playing.idle .vp-bar { opacity: 0; }
+.vp-time { min-width: 32px; font-variant-numeric: tabular-nums; }
+.vp-track {
+    flex: 1; height: 18px; display: flex; align-items: center; cursor: pointer; touch-action: none;
+}
+.vp-rail { position: relative; width: 100%; height: 4px; border-radius: 4px; background: rgba(255,255,255,0.3); }
+.vp-buf { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 4px; background: rgba(255,255,255,0.45); }
+.vp-fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 4px; background: #ff3b3b; }
+.vp-fill::after {
+    content: ''; position: absolute; right: -6px; top: 50%; width: 12px; height: 12px; margin-top: -6px;
+    border-radius: 50%; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.vp-btn {
+    width: 28px; height: 28px; flex-shrink: 0; border: none; background: transparent; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+}
+.vp-btn svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.vp-btn .off { display: none; }
+.vp-btn.muted .on { display: none; }
+.vp-btn.muted .off { display: block; }
+.video-meta {
+    display: flex; align-items: center; gap: 10px;
+    margin: 10px auto 0; padding: 10px 12px;
+    max-width: 320px;
+    border-radius: 14px;
+    background: linear-gradient(160deg, rgba(255,255,255,0.95), rgba(240,243,252,0.9));
+    box-shadow: var(--neu-sm);
+}
+.vm-ic {
+    width: 30px; height: 30px; border-radius: 10px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(145deg, #ff4040, #cc0000);
+    box-shadow: 0 4px 8px rgba(232,25,44,0.35), inset 0 1px 1px rgba(255,255,255,0.4);
+}
+.vm-ic svg { width: 13px; height: 13px; fill: #fff; margin-left: 2px; }
+.vm-t { font-size: 12.5px; font-weight: 800; line-height: 1.3; }
+.vm-s { font-size: 10.5px; font-weight: 600; color: var(--txt2); margin-top: 1px; }
+.steps-container { padding: 0 14px 4px; position: relative; }
+.steps-container::before {
+    content: '';
+    position: absolute;
+    left: 48px; top: 40px; bottom: 60px;
+    width: 2px; border-radius: 2px; z-index: 0;
+    background: repeating-linear-gradient(180deg, rgba(232,25,44,0.45) 0 6px, transparent 6px 11px);
+}
+.step-card {
+    position: relative; z-index: 1;
+    background: linear-gradient(160deg, rgba(255,255,255,0.97), rgba(240,243,252,0.94));
+    border-top: 1.5px solid rgba(255,255,255,1);
+    border-left: 1.5px solid rgba(255,255,255,0.9);
+    border-right: 1.5px solid rgba(220,224,235,0.6);
+    border-bottom: 1.5px solid rgba(200,204,218,0.5);
+    box-shadow: var(--card3d);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 14px;
+    contain: layout style;
+}
+.step-num {
+    width: 38px; height: 38px;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #ff4040, #cc0000);
+    color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 5px 10px rgba(232,25,44,0.35), inset 0 2px 2px rgba(255,255,255,0.4), inset 0 -2px 4px rgba(0,0,0,0.15);
+    margin-top: 2px;
+}
+.step-content { flex: 1; min-width: 0; }
+.step-title { font-size: 14px; font-weight: 800; color: var(--txt); margin-bottom: 5px; letter-spacing: -0.1px; }
+.step-desc { font-size: 12.5px; color: var(--txt2); font-weight: 500; line-height: 1.7; }
+.step-desc b { color: var(--txt); font-weight: 700; }
+.step-ic {
+    width: 34px; height: 34px; border-radius: 11px; flex-shrink: 0;
+    background: var(--bg); box-shadow: var(--neu-in);
+    display: flex; align-items: center; justify-content: center;
+}
+.step-ic svg { width: 17px; height: 17px; stroke: var(--red); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.step-card.done .step-num {
+    background: linear-gradient(145deg, #3ccf7a, #17924a);
+    box-shadow: 0 5px 10px rgba(31,168,90,0.35), inset 0 2px 2px rgba(255,255,255,0.4), inset 0 -2px 4px rgba(0,0,0,0.15);
+}
+.step-card.done .step-ic svg { stroke: var(--grn); }
+.tip-wrap { padding: 6px 14px 0; }
+.tip {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px 14px;
+    border-radius: 16px;
+    background: linear-gradient(160deg, #fffaf0, #fff3dc);
+    border: 1.5px solid #ffe2ad;
+    box-shadow: 0 8px 18px rgba(255,149,0,0.12), 0 2px 0 rgba(255,255,255,0.9) inset;
+    contain: layout style;
+}
+.tip-ic {
+    width: 32px; height: 32px; border-radius: 10px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(145deg, #ffb340, #ff9500);
+    box-shadow: 0 4px 10px rgba(255,149,0,0.35), inset 0 1px 2px rgba(255,255,255,0.4);
+}
+.tip-ic svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
+.tip-t { font-size: 13px; font-weight: 800; color: #8a5200; margin-bottom: 3px; }
+.tip-d { font-size: 12px; font-weight: 500; line-height: 1.7; color: #8a6a35; }
+.faq-wrap { padding: 0 14px; }
+.faq {
+    margin-bottom: 10px;
+    border-radius: 14px;
+    background: linear-gradient(160deg, rgba(255,255,255,0.97), rgba(240,243,252,0.94));
+    border: 1.5px solid rgba(255,255,255,0.95);
+    box-shadow: var(--neu-sm);
+    overflow: hidden;
+    contain: layout style;
+}
+.faq-q {
+    width: 100%;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 14px;
+    font-size: 13.5px; font-weight: 800; line-height: 1.5;
+    color: var(--txt); text-align: left;
+    background: transparent; border: none; cursor: pointer; font-family: var(--font);
+}
+.faq-arrow {
+    display: block; flex-shrink: 0;
+    width: 8px; height: 8px;
+    border-right: 2.2px solid var(--txt2);
+    border-bottom: 2.2px solid var(--txt2);
+    transform: rotate(45deg);
+    transition: transform 0.35s ease, border-color 0.35s ease, margin 0.35s ease;
+    margin-top: -4px;
+}
+.faq.open .faq-arrow {
+    transform: rotate(-135deg);
+    border-color: var(--red);
+    margin-top: 4px;
+}
+.faq.open .faq-q { color: var(--red); }
+.faq-a-wrapper {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq-a-content {
+    padding: 0 14px 14px;
+    font-size: 12.5px; font-weight: 500; line-height: 1.75; color: var(--txt2);
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.faq.open .faq-a-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+.faq-a-content a {
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 700;
+}
+.cta-wrap { 
+    padding: 8px 14px 85px; 
+}
+.cta {
+    width: 100%;
+    display: flex; align-items: center; justify-content: center; gap: 9px;
+    padding: 15px 18px;
+    border: none; border-radius: 16px;
+    font-family: var(--font); font-size: 14px; font-weight: 800; letter-spacing: 0.2px;
+    color: #fff; cursor: pointer;
+    background: linear-gradient(145deg, #ff4040, #cc0000);
+    box-shadow: 0 5px 0 #900000, 0 10px 22px rgba(232,25,44,0.32), inset 0 1px 0 rgba(255,255,255,0.28);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.cta:active { 
+    transform: translateY(4px); 
+    box-shadow: 0 1px 0 #900000, 0 4px 10px rgba(232,25,44,0.28), inset 0 1px 0 rgba(255,255,255,0.28); 
+}
+.cta svg { width: 17px; height: 17px; stroke: #fff; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.ftr-bottom { 
+    position: relative; 
+    z-index: 1; 
+    margin-top: 24px; 
+    padding-top: 10px; 
+    text-align: center; 
+}
+.ftr-copy { font-size: 11px; color: var(--txt2); font-weight: 600; letter-spacing: .1px; line-height: 1.6; }
+.ftr-copy b { color: var(--red); font-weight: 900; }
+.ftr-made { font-size: 10.5px; color: var(--txt2); font-weight: 700; margin-top: 5px; display: block; line-height: 1.6; }
+.ftr-heart { color: var(--red); }
+@media (max-width: 380px) { .ftr-copy { font-size: 10.5px; } }
+.bnav {
+    position: fixed;
+    bottom: -26px;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    height: 100px;
+    background: #ffffff;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 30px rgba(0,0,0,0.20), 0 -8px 60px rgba(0,0,0,0.12);
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 6px 0;
+}
+.bn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-width: 0;
+}
+.bn-ic {
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    background: var(--bg);
+    box-shadow: var(--neu-in);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+.bn.active .bn-ic {
+    background: linear-gradient(145deg, #ff4040, #cc0000);
+    box-shadow: 0 4px 12px rgba(232,25,44,0.35), inset 0 1px 1px rgba(255,255,255,0.3);
+}
+.bn:active .bn-ic { transform: scale(0.90); }
+.bn-img { width: 19px; height: 19px; object-fit: contain; display: block; }
+.bn span { font-size: 9px; font-weight: 700; letter-spacing: 0.2px; color: var(--txt2); }
+.bn.active span { color: var(--red); font-weight: 800; }
+@media (max-width: 380px) {
+    .hdr { padding: 10px 14px 10px 0; }
+    .bn span { font-size: 8px; }
+    .steps-container::before { left: 46px; }
+}
+</style>
+</head>
+<body class="loading">
+
+<div class="page active" id="pg-howto">
+    <div class="hdr">
+        <div class="hdr-nav">
+            <button class="hbtn" onclick="goPage('pg-home')" aria-label="Back">
+                <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:var(--txt);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="hdr-title">How to Install</div>
+        </div>
+    </div>
+
+    <div class="sec-label"><i></i><h2>Video Tutorial</h2><small>Watch & Learn</small></div>
+    <div class="video-container" id="video-sec">
+        <div class="video-card" id="vcard">
+            <video id="vid" playsinline webkit-playsinline preload="metadata"></video>
+            <div class="vp-spin"></div>
+            <button class="vp-big" id="vbig" aria-label="Play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></button>
+            <div class="vp-bar">
+                <span class="vp-time" id="vcur">0:00</span>
+                <div class="vp-track" id="vtrack"><div class="vp-rail"><div class="vp-buf" id="vbuf"></div><div class="vp-fill" id="vfill"></div></div></div>
+                <span class="vp-time" id="vdur">0:00</span>
+                <button class="vp-btn" id="vmute" aria-label="Mute">
+                    <svg class="on" viewBox="0 0 24 24"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15" fill="#fff"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+                    <svg class="off" viewBox="0 0 24 24"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15" fill="#fff"/><line x1="17" y1="9" x2="22" y2="15"/><line x1="22" y1="9" x2="17" y2="15"/></svg>
+                </button>
+                <button class="vp-btn" id="vfs" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><polyline points="4 9 4 4 9 4"/><polyline points="20 9 20 4 15 4"/><polyline points="4 15 4 20 9 20"/><polyline points="20 15 20 20 15 20"/></svg></button>
+            </div>
+        </div>
+        <div class="video-meta">
+            <div class="vm-ic"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
+            <div>
+                <div class="vm-t">How to Install: Step-by-Step</div>
+                <div class="vm-s">Watch this video for easy installation steps.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sec-label"><i></i><h2>Installation Steps</h2><small>Step by Step</small></div>
+    <div class="steps-container" id="steps-sec">
+        <div class="step-card">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <div class="step-title">Download the APK</div>
+                <div class="step-desc">Download the <b>APK file</b> of your preferred app or game from our website.</div>
+            </div>
+            <div class="step-ic"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><path d="M5 20h14"/></svg></div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <div class="step-title">Allow Unknown Sources</div>
+                <div class="step-desc">Go to your phone settings and enable the <b>'Install Unknown Apps'</b> or <b>'Unknown Sources'</b> option.</div>
+            </div>
+            <div class="step-ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 8.2-8 9-4.8-.8-8-4.5-8-9V6l8-3z"/><polyline points="8.5 12 11 14.5 15.5 9.5"/></svg></div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <div class="step-title">Turn Off Play Protect</div>
+                <div class="step-desc">Open Google Play Store ➔ Profile Icon ➔ Play Protect ➔ Settings Gear ➔ Turn off 'Scan apps with Play Protect'.</div>
+            </div>
+            <div class="step-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-num">4</div>
+            <div class="step-content">
+                <div class="step-title">Install the App</div>
+                <div class="step-desc">Open the downloaded file, tap <b>'Install'</b>, and wait for the installation to finish.</div>
+            </div>
+            <div class="step-ic"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/><path d="M12 7v6"/><polyline points="9.5 10.5 12 13 14.5 10.5"/></svg></div>
+        </div>
+
+        <div class="step-card done">
+            <div class="step-num">5</div>
+            <div class="step-content">
+                <div class="step-title">Open &amp; Enjoy</div>
+                <div class="step-desc">Once the installation is complete, tap <b>'Open'</b> and enjoy the app.</div>
+            </div>
+            <div class="step-ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg></div>
+        </div>
+    </div>
+
+    <div class="tip-wrap">
+        <div class="tip">
+            <div class="tip-ic"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2V16h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></div>
+            <div>
+                <div class="tip-t">Important Tips</div>
+                <div class="tip-d">Ensure you have enough free storage space based on the file size and make sure your internet connection is stable before downloading. Also, make sure to follow all the instructions given above carefully.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sec-label"><i></i><h2>Common Issues & Solutions</h2><small>FAQ</small></div>
+    <div class="faq-wrap">
+        
+        <div class="faq">
+            <button class="faq-q">
+                <span>Download Link Not Working?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        Due to server sync, newly added download links may take 5–15 minutes to activate. If a link still doesn't work after that, please let us know so we can fix it! <br><br>Report Issue: <a href="mailto:support@modworlds.org">support@modworlds.org</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-q">
+                <span>How to fix slow download speed?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        First, check your network connection. If the issue persists, we recommend trying a fast VPN client to improve your download speed.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-q">
+                <span>What causes mods not to work properly?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        Our team thoroughly tests every game and app before publishing them on the site.<br><br>
+                        If a mod isn't working as expected, please re-check the <b>"About This"</b> and <b>"Key Features"</b> sections in the post to ensure your device meets the required features and details listed for that mod.<br><br>
+                        If you have verified everything and the issue persists, please report it to us or contact us directly at <a href="mailto:support@modworlds.org">support@modworlds.org</a> so we can investigate and fix it for you.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-q">
+                <span>Why does VirusTotal show a warning for this APK?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        The detection is a false positive triggered by our code protection. We use obfuscation to secure our custom branding (banner and verification toast message) against unauthorized tampering. Our app is completely safe and free from viruses.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-q">
+                <span>What is an APK Installer and How Do I Use It?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        An APK Installer helps Android users install their favorite APK files on their devices. It makes the installation process simple and convenient.<br><br>
+                        <b>How to Install an APK File</b><br>
+                        1. Download your preferred APK file.<br>
+                        2. Open the downloaded APK file on your Android device.<br>
+                        3. If prompted, allow the necessary installation permission.<br>
+                        4. Tap Install and wait for the process to finish.<br>
+                        5. Once installed, open the app or game and enjoy!<br><br>
+                        That's it! Follow these simple steps to install your favorite Android apps and games with ease.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-q">
+                <span>How to Resolve the "App Not Installed" Issue?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        The "App Not Installed" message usually appears due to signature conflicts when an existing version of the app or game is already present on your phone—whether it's from Play Store or another site. Android system blocks new installations over different source files.<br><br>
+                        <b>How to Fix:</b><br>
+                        1. Uninstall any existing version of the game or app currently on your device.<br>
+                        2. Clear your browser or package manager cache if necessary.<br>
+                        3. Install our downloaded version fresh.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-q">
+                <span>The app is not opening and crashing, what should I do now?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        If an app or game is crashing or refusing to open, it is usually caused by cache conflicts, missing permissions, or storage issues. You can easily fix this by following these simple steps:<br><br>
+                        <b>Clear App Cache:</b> Go to your phone Settings, find Apps, locate our app, clear its cache, and try opening it again.<br><br>
+                        <b>Check Storage & Permissions:</b> Ensure your phone has enough free storage and that necessary permissions (like storage or internet access) are allowed.<br><br>
+                        <b>Reinstall Cleanly:</b> If the issue persists, uninstall the app completely, download the latest version fresh from our site (modworlds.org), and install it again.<br><br>
+                        If the problem still continues, please feel free to reach out to us at <a href="mailto:support@modworlds.org">support@modworlds.org</a> with details of the issue.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-q">
+                <span>How to fix the "Parse Error" (There was a problem parsing the package) issue?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        The "Parse Error" usually occurs when the downloaded APK or XAPK file is incomplete, corrupted during download, or not supported by your Android version.<br><br>
+                        You can easily resolve this by following these steps:<br><br>
+                        <b>Re-download the File:</b> A broken download is the most common cause. Delete the current file and download it fresh from our site.<br><br>
+                        <b>Check Android Compatibility:</b> Ensure your device's Android version meets the minimum requirements specified in the post.<br><br>
+                        <b>Use a Proper Extractor/Installer:</b> If it is an XAPK file, make sure you are using a reliable tool or installer app to open it.<br><br>
+                        If you have tried everything and it still fails, please reach out to us at <a href="mailto:support@modworlds.org">support@modworlds.org</a> so we can check the file.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-q">
+                <span>How to Update Mods Without Losing Game Progress or Data?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        Updating a mod without losing your progress is very simple! You just need to install the new version directly over the old one without deleting or uninstalling it first. Your device will automatically overwrite the existing application files while keeping your saved data intact.<br><br>
+                        <b>Important Note:</b> This smooth update process only works if both the old and new versions are downloaded directly from our site. Trying to update over a mod from a different source or Play Store may cause installation conflicts.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-q">
+                <span>Where can I find the Unknown Sources option?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        Go to Settings → Security (or Apps) → Install Unknown Apps, select your browser or file manager, and enable "Allow from this source". The menu name may vary slightly depending on your phone model.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-q">
+                <span>Why do some antiviruses (like BitDefender or Trustlook) show a Riskware/PUA warning?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        During development and testing, our APKs are signed with a standard developer key (Debug/Test Key). Some antivirus scanners automatically flag test keys as "Riskware" or "PUA". This is a false positive and completely safe. Our app contains no malware or harmful code.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-q">
+                <span>What Is an XAPK File and How to Install It on Android?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        XAPK is a package format that combines an application's APK file with additional OBB data files in a single package. Since Android does not natively support direct XAPK installation, you may need a compatible tool to install it.<br><br>
+                        <b>Method 1: Using XAPKS Installer (Recommended)</b><br>
+                        1. Open the Search Bar on our website.<br>
+                        2. Search for XAPKS Installer.<br>
+                        3. Find the app in the search results and download it.<br>
+                        4. Open XAPKS Installer and select your downloaded .xapk file.<br>
+                        5. Tap Install and follow the on-screen instructions.<br><br>
+                        <b>Method 2: Using MT Manager</b><br>
+                        1. Open the Search Bar on our website.<br>
+                        2. Search for MT Manager.<br>
+                        3. Find the app in the search results and download it.<br>
+                        4. Open MT Manager and extract the XAPK file.<br>
+                        5. Install the APK file and place the OBB folder in the appropriate "Android/obb/" directory if required.<br><br>
+                        <b>Quick Tip</b><br>
+                        To find an XAPK installation tool, simply search for XAPKS Installer or MT Manager in the Search Bar on our website and download your preferred tool from the search results.<br><br>
+                        You're all set! Follow the steps above to install your XAPK file on Android.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-q">
+                <span>How Do I Install a Game When APK and OBB Files Are Downloaded Separately?</span>
+                <i class="faq-arrow"></i>
+            </button>
+            <div class="faq-a-wrapper">
+                <div class="faq-a-inner">
+                    <div class="faq-a-content">
+                        Some Android games require both an APK file and additional OBB data files to install and run properly. When these files are provided separately, you need to install the APK file first and then place the OBB data in the correct folder.<br><br>
+                        <b>Step 1: Download the APK and OBB Files</b><br>
+                        1. Download the game's APK file.<br>
+                        2. Download the corresponding OBB file for the same game.<br>
+                        3. If the OBB file is provided in ZIP or RAR format, extract it using a file manager.<br><br>
+                        <b>Step 2: Install the APK File</b><br>
+                        1. Open the Downloads folder on your phone.<br>
+                        2. Tap the downloaded APK file.<br>
+                        3. If prompted, enable the necessary app installation permission.<br>
+                        4. Tap Install and wait for the installation to finish.<br>
+                        5. If the game requires OBB data, do not launch it until you have placed the data in the correct location.<br><br>
+                        <b>Step 3: Place the OBB File in the Correct Folder</b><br>
+                        1. Open the File Manager on your phone.<br>
+                        2. Locate the folder created after extracting the downloaded OBB archive.<br>
+                        3. Find the "Android/obb/" folder in your phone's internal storage.<br>
+                        4. Locate the folder corresponding to the game's package name. If it does not exist, create a new folder using the game's exact package name.<br>
+                        5. Move the OBB file into that folder.<br><br>
+                        <b>Example of the folder structure:</b><br>
+                        "Android/obb/com.example.game/main.123.com.example.game.obb"<br><br>
+                        <b>Note:</b> The folder structure or storage path may appear different on your phone. If so, locate the "Android/obb/" folder using your device's File Manager and place the OBB file in the appropriate location.<br><br>
+                        <b>Step 4: Launch the Game</b><br>
+                        After installing the APK and placing the OBB file in the correct location, launch the game. If both files are compatible and correctly placed, the game should be able to load the required data.<br><br>
+                        <b>Important Instructions</b><br>
+                        - The APK and OBB files must belong to the same game and compatible versions.<br>
+                        - Do not rename the OBB file or its folder.<br>
+                        - Depending on your Android version, you may need additional permission to access the "Android/obb/" folder.<br>
+                        - Some games download additional data automatically or use a different installation method.<br><br>
+                        That's it! Follow these steps to set up your separately downloaded APK and OBB files and get your game running on your Android device.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cta-wrap">
+        <button class="cta" onclick="goPage('pg-apps')">
+            Browse Apps &amp; Games
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+        </button>
+        <div class="ftr-bottom">
+            <div class="ftr-copy">&copy; <span id="ftrYear">2026</span> <b>MOD WORLDS</b> &mdash; Safe &amp; Verified Android Apps.</div>
+            <div class="ftr-made">Built with <span class="ftr-heart">&hearts;</span> for the global gaming community.</div>
+        </div>
+    </div>
+</div>
+
+<div class="bnav">
+    <button class="bn" onclick="goPage('pg-home')" id="bn-home">
+        <div class="bn-ic"><img decoding="async" src="https://img.modworlds.org/Home.png" class="bn-img" alt="Home"></div>
+        <span>Home</span>
+    </button>
+    <button class="bn" onclick="goPage('pg-games')" id="bn-games">
+        <div class="bn-ic"><img decoding="async" src="https://img.modworlds.org/ve.png" class="bn-img" alt="Games"></div>
+        <span>Games</span>
+    </button>
+    <button class="bn" onclick="goPage('pg-apps')" id="bn-apps">
+        <div class="bn-ic"><img decoding="async" src="https://img.modworlds.org/Apps.png" class="bn-img" alt="Apps"></div>
+        <span>Apps</span>
+    </button>
+    <button class="bn" onclick="goPage('pg-trending')" id="bn-trending">
+        <div class="bn-ic"><img decoding="async" src="https://img.modworlds.org/Trending.png" class="bn-img" alt="Trending"></div>
+        <span>Trending</span>
+    </button>
+    <button class="bn" onclick="goPage('pg-profile')" id="bn-profile">
+        <div class="bn-ic"><img decoding="async" src="https://img.modworlds.org/Profile.png" class="bn-img" alt="Profile"></div>
+        <span>Profile</span>
+    </button>
+</div>
+
+<script>
+function goPage(id) {
+    const pg = document.getElementById(id);
+    if (!pg) return;
+    const vid = document.getElementById('vid');
+    if (vid && !vid.paused) vid.pause();
+    const active = document.querySelector('.page.active');
+    if (active && active.id === id) return;
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    pg.classList.add('active');
+    pg.scrollTop = 0;
+    const hdrEl = pg.querySelector('.hdr');
+    if (hdrEl) {
+        hdrEl.style.transform = 'translateY(0)';
+        hdrEl.dataset.hideOffset = '0';
+    }
+    const map = { 'pg-home': 'bn-home', 'pg-games': 'bn-games', 'pg-apps': 'bn-apps', 'pg-trending': 'bn-trending', 'pg-profile': 'bn-profile' };
+    document.querySelectorAll('.bn').forEach(b => b.classList.remove('active'));
+    const target = map[id];
+    if (target) {
+        const el = document.getElementById(target);
+        if (el) el.classList.add('active');
+    }
+}
+
+document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        const faq = btn.closest('.faq');
+        const wrapper = faq.querySelector('.faq-a-wrapper');
+        const content = faq.querySelector('.faq-a-content');
+        const isOpen = faq.classList.contains('open');
+        document.querySelectorAll('.faq.open').forEach(function(openFaq) {
+            openFaq.classList.remove('open');
+            openFaq.querySelector('.faq-a-wrapper').style.height = '0px';
+        });
+        if (!isOpen) {
+            faq.classList.add('open');
+            wrapper.style.height = content.offsetHeight + 'px';
+        } else {
+            faq.classList.remove('open');
+            wrapper.style.height = '0px';
+        }
+    });
+});
+
+const VIDEO_SRC = '';
+const YT_ID = '0t4rh6BUvRE';
+
+(function initPlayer() {
+    const card = document.getElementById('vcard');
+    const v = document.getElementById('vid');
+    if (!card || !v) return;
+    if (!VIDEO_SRC) {
+        card.innerHTML = '<iframe src="https://www.youtube.com/embed/' + YT_ID + '?rel=0&playsinline=1&modestbranding=1" title="How to Install" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+        return;
+    }
+    const big = document.getElementById('vbig'), cur = document.getElementById('vcur'), dur = document.getElementById('vdur');
+    const fill = document.getElementById('vfill'), buf = document.getElementById('vbuf'), track = document.getElementById('vtrack');
+    const mute = document.getElementById('vmute'), fs = document.getElementById('vfs');
+    let idleTimer = null;
+    v.src = VIDEO_SRC;
+    const fmt = t => { t = Math.max(0, Math.floor(t || 0)); return Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0'); };
+    const toggle = () => { v.paused ? v.play().catch(function(){}) : v.pause(); };
+    const wake = () => {
+        card.classList.remove('idle');
+        clearTimeout(idleTimer);
+        if (!v.paused) idleTimer = setTimeout(() => card.classList.add('idle'), 2500);
+    };
+    big.addEventListener('click', toggle);
+    v.addEventListener('click', () => { toggle(); wake(); });
+    card.addEventListener('pointermove', wake);
+    v.addEventListener('loadedmetadata', () => { dur.textContent = fmt(v.duration); });
+    v.addEventListener('play', () => { card.classList.add('playing'); wake(); });
+    v.addEventListener('pause', () => { card.classList.remove('playing', 'idle'); clearTimeout(idleTimer); });
+    v.addEventListener('ended', () => { card.classList.remove('playing', 'idle'); });
+    v.addEventListener('waiting', () => card.classList.add('loading'));
+    ['playing', 'canplay', 'pause'].forEach(e => v.addEventListener(e, () => card.classList.remove('loading')));
+    v.addEventListener('timeupdate', () => {
+        if (!v.duration) return;
+        fill.style.width = (v.currentTime / v.duration * 100) + '%';
+        cur.textContent = fmt(v.currentTime);
+    });
+    v.addEventListener('progress', () => {
+        if (!v.duration || !v.buffered.length) return;
+        buf.style.width = (v.buffered.end(v.buffered.length - 1) / v.duration * 100) + '%';
+    });
+    let seeking = false;
+    const seekTo = e => {
+        const r = track.getBoundingClientRect();
+        const p = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+        if (v.duration) v.currentTime = p * v.duration;
+    };
+    track.addEventListener('pointerdown', e => { seeking = true; track.setPointerCapture(e.pointerId); seekTo(e); });
+    track.addEventListener('pointermove', e => { if (seeking) seekTo(e); });
+    track.addEventListener('pointerup', () => { seeking = false; });
+    mute.addEventListener('click', () => { v.muted = !v.muted; mute.classList.toggle('muted', v.muted); });
+    fs.addEventListener('click', () => {
+        if (v.webkitEnterFullscreen && !card.requestFullscreen) { v.webkitEnterFullscreen(); return; }
+        if (document.fullscreenElement) document.exitFullscreen();
+        else (card.requestFullscreen || card.webkitRequestFullscreen).call(card);
+    });
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(es => { es.forEach(e => { if (!e.isIntersecting && !v.paused) v.pause(); }); },
+            { root: document.getElementById('pg-howto'), threshold: 0.2 }).observe(card);
+    }
+})();
+
+(function(){ var y = document.getElementById('ftrYear'); if (y) y.textContent = new Date().getFullYear(); })();
+
+function initHideHeaderOnScroll() {
+    document.querySelectorAll('.page').forEach(function(pageEl) {
+        const hdrEl = pageEl.querySelector('.hdr');
+        if (!hdrEl) return;
+        const hdrHeight = hdrEl.offsetHeight || 60;
+        let lastY = 0;
+        let ticking = false;
+        pageEl.addEventListener('scroll', function() {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function() {
+                const curY = pageEl.scrollTop;
+                const delta = curY - lastY;
+                lastY = curY;
+                let offset = parseFloat(hdrEl.dataset.hideOffset || '0');
+                if (curY <= 0) {
+                    offset = 0;
+                } else {
+                    offset += delta;
+                    if (offset < 0) offset = 0;
+                    if (offset > hdrHeight) offset = hdrHeight;
+                }
+                hdrEl.dataset.hideOffset = offset;
+                hdrEl.style.transform = 'translateY(-' + offset + 'px)';
+                ticking = false;
+            });
+        }, { passive: true });
+    });
+}
+
+initHideHeaderOnScroll();
+
+requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+        document.body.classList.remove('loading');
+    });
+});
+</script>
+
+</body>
+</html>
