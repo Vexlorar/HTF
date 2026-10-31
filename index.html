@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src https://apxmod.store; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>APXMOD — More</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://apxmod.store">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:only light;--bg:#edf0f7;--sd:#c5c9d8;--sl:#fff;--txt:#1a1d2b;--txt2:#7a7e92;--red:#e8192c;--neu-in:inset 4px 4px 10px var(--sd),inset -3px -3px 7px var(--sl);--neu:8px 8px 18px var(--sd),-5px -5px 12px var(--sl);--card3d:0 2px 0 rgba(255,255,255,.95) inset,0 10px 22px rgba(0,0,0,.11),0 4px 8px rgba(0,0,0,.07),0 1px 3px rgba(0,0,0,.05)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;background:var(--bg);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;color:var(--txt);overflow:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--sd);border-radius:10px}
+@keyframes tapBounce{0%{transform:scale(1)}25%{transform:scale(.86)}55%{transform:scale(1.08)}80%{transform:scale(.98)}100%{transform:scale(1)}}
+.tap-bounce{animation:tapBounce .42s cubic-bezier(.34,1.56,.64,1)!important}
+.page{display:none;flex-direction:column;height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.page.active{display:flex}
+.page.active>*{flex-shrink:0}
+.hdr{background:#fff;padding:12px 20px;padding-top:calc(12px + env(safe-area-inset-top,0px));display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.10);transform:translate3d(0,0,0);backface-visibility:hidden}
+.hdr-nav{display:flex;align-items:center;gap:10px}
+.hbtn{width:36px;height:36px;border-radius:11px;background:var(--bg);box-shadow:var(--neu-in);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--txt2);transition:transform .15s ease,box-shadow .15s ease;flex-shrink:0}
+.hbtn:active{transform:scale(.92);box-shadow:var(--neu)}
+.sec-title{font-size:17px;font-weight:900;letter-spacing:-.2px}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0 14px}
+.cat-item{display:block;text-decoration:none;color:inherit;background:linear-gradient(160deg,rgba(255,255,255,.97),rgba(238,241,250,.9));border-top:1.5px solid rgba(255,255,255,1);border-left:1.5px solid rgba(255,255,255,.9);border-right:1.5px solid rgba(220,224,235,.6);border-bottom:1.5px solid rgba(200,204,218,.5);box-shadow:0 10px 32px rgba(var(--glow,0,0,0),.7),var(--card3d);border-radius:10px;padding:14px 4px 12px;text-align:center;cursor:pointer}
+.cat-item:active{transform:translateY(4px)!important;box-shadow:0 4px 12px rgba(var(--glow,0,0,0),.35),0 1px 3px rgba(0,0,0,.05)}
+.cat-ic{width:42px;height:42px;border-radius:8px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center}
+.cat-item:active .cat-ic{transform:scale(.92)}
+.cat-ic img{width:24px;height:24px;object-fit:contain;-webkit-filter:brightness(0) invert(1);filter:brightness(0) invert(1)}
+.cat-name{font-size:10px;font-weight:800;color:var(--txt)}
+@keyframes cardIn{0%{opacity:0;transform:translate3d(0,34px,0) scale(.8);animation-timing-function:cubic-bezier(.22,.8,.3,1)}62%{opacity:1;transform:translate3d(0,-5px,0) scale(1.04);animation-timing-function:cubic-bezier(.45,0,.25,1)}100%{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+@keyframes iconPop{0%{transform:scale(.5) rotate(-12deg);animation-timing-function:cubic-bezier(.22,.8,.3,1)}62%{transform:scale(1.14) rotate(4deg);animation-timing-function:cubic-bezier(.45,0,.25,1)}100%{transform:scale(1) rotate(0)}}
+html.js-anim .cat-item:not(.in){opacity:0}
+.cat-item.pre{will-change:transform,opacity;backface-visibility:hidden}
+.cat-item.pre .cat-ic{will-change:transform}
+.cat-item.in{animation:cardIn .75s linear backwards;animation-delay:var(--d,0ms)}
+.cat-item.in .cat-ic{animation:iconPop .8s linear backwards;animation-delay:calc(var(--d,0ms) + 120ms)}
+.cat-item.in.done,.cat-item.in.done .cat-ic{will-change:auto;animation:none}
+@media (prefers-reduced-motion:reduce){.cat-item.in,.cat-item.in .cat-ic{animation:none}}
+.copyright-bar{text-align:center;padding:16px 20px 10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));margin-top:auto;width:100%}
+.ftr-bottom{position:relative;z-index:1;padding-top:10px;text-align:center}
+.ftr-copy{font-size:11px;color:var(--txt2);font-weight:600;letter-spacing:.1px;line-height:1.6}
+.ftr-copy b{color:var(--red);font-weight:900;-webkit-text-stroke:.2px var(--red)}
+.ftr-made{font-size:10.5px;color:var(--txt2);font-weight:700;margin-top:5px;display:block;line-height:1.6}
+.ftr-heart{color:var(--red)}
+@media (max-width:380px){
+.cat-grid{gap:6px}
+.cat-item{padding:10px 2px 8px}
+.cat-ic{width:34px;height:34px;margin-bottom:10px;border-radius:6px}
+.cat-ic img{width:20px;height:20px}
+.cat-name{font-size:9px}
+.hdr{padding:10px 14px;padding-top:calc(10px + env(safe-area-inset-top,0px))}
+.ftr-copy{font-size:10.5px}
+.copyright-bar{padding:14px 16px 8px;padding-bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+}
+</style>
+</head>
+<body>
+<div class="page active" id="pg-more">
+<div class="hdr" id="more-header">
+<div class="hdr-nav">
+<button class="hbtn" id="backBtn" type="button" aria-label="Go back"><svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:var(--txt);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><polyline points="15 18 9 12 15 6"/></svg></button>
+<div style="font-size:17px;font-weight:900">More</div>
+</div>
+</div>
+<div class="sec-title" style="padding:16px 14px 4px">Games</div>
+<div class="cat-grid" style="padding:6px 14px 4px;gap:10px;row-gap:24px">
+<a class="cat-item" href="games.html?genre=Action" style="--glow: 220,38,38;"><div class="cat-ic" style="background:linear-gradient(145deg,#f87171,#991b1b); box-shadow:0 4px 0 #7f1d1d,0 8px 16px rgba(220,38,38,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/Action.png" alt="" aria-hidden="true"></div><div class="cat-name">Action</div></a>
+<a class="cat-item" href="games.html?genre=Adventure" style="--glow: 124,58,237;"><div class="cat-ic" style="background:linear-gradient(145deg,#a78bfa,#5b21b6); box-shadow:0 4px 0 #3b0764,0 8px 16px rgba(124,58,237,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/Adventure.png" alt="" aria-hidden="true"></div><div class="cat-name">Adventure</div></a>
+<a class="cat-item" href="games.html?genre=Racing" style="--glow: 249,115,22;"><div class="cat-ic" style="background:linear-gradient(145deg,#fb923c,#c2410c); box-shadow:0 4px 0 #7c2d12,0 8px 16px rgba(249,115,22,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/Racing.png" alt="" aria-hidden="true"></div><div class="cat-name">Racing</div></a>
+<a class="cat-item" href="games.html?genre=Sports" style="--glow: 132,204,22;"><div class="cat-ic" style="background:linear-gradient(145deg,#bef264,#4d7c0f); box-shadow:0 4px 0 #1a2e05,0 8px 16px rgba(132,204,22,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/Sports.png" alt="" aria-hidden="true"></div><div class="cat-name">Sports</div></a>
+<a class="cat-item" href="games.html?genre=Puzzle" style="--glow: 245,158,11;"><div class="cat-ic" style="background:linear-gradient(145deg,#fbbf24,#b45309); box-shadow:0 4px 0 #78350f,0 8px 16px rgba(245,158,11,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/Puzzle.png" alt="" aria-hidden="true"></div><div class="cat-name">Puzzle</div></a>
+<a class="cat-item" href="games.html?genre=Arcade" style="--glow: 6,182,212;"><div class="cat-ic" style="background:linear-gradient(145deg,#22d3ee,#0e7490); box-shadow:0 4px 0 #164e63,0 8px 16px rgba(6,182,212,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/Arcade.png" alt="" aria-hidden="true"></div><div class="cat-name">Arcade</div></a>
+<a class="cat-item" href="games.html?genre=RPG" style="--glow: 79,70,229;"><div class="cat-ic" style="background:linear-gradient(145deg,#818cf8,#3730a3); box-shadow:0 4px 0 #1e1b4b,0 8px 16px rgba(79,70,229,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/RPG.png" alt="" aria-hidden="true"></div><div class="cat-name">RPG</div></a>
+<a class="cat-item" href="games.html?genre=Strategy" style="--glow: 71,85,105;"><div class="cat-ic" style="background:linear-gradient(145deg,#94a3b8,#334155); box-shadow:0 4px 0 #1e293b,0 8px 16px rgba(71,85,105,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/Strategy.png" alt="" aria-hidden="true"></div><div class="cat-name">Strategy</div></a>
+<a class="cat-item" href="games.html?genre=Simulation" style="--glow: 146,64,14;"><div class="cat-ic" style="background:linear-gradient(145deg,#b45309,#78350f); box-shadow:0 4px 0 #451a03,0 8px 16px rgba(146,64,14,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/Simulation.png" alt="" aria-hidden="true"></div><div class="cat-name">Simulation</div></a>
+<a class="cat-item" href="games.html?genre=Casual" style="--glow: 236,72,153;"><div class="cat-ic" style="background:linear-gradient(145deg,#f472b6,#be185d); box-shadow:0 4px 0 #831843,0 8px 16px rgba(236,72,153,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/Casual.png" alt="" aria-hidden="true"></div><div class="cat-name">Casual</div></a>
+<a class="cat-item" href="games.html?genre=Open%20World" style="--glow: 15,118,110;"><div class="cat-ic" style="background:linear-gradient(145deg,#2dd4bf,#115e59); box-shadow:0 4px 0 #042f2e,0 8px 16px rgba(15,118,110,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/Open%20World.png" alt="" aria-hidden="true"></div><div class="cat-name">Open World</div></a>
+<a class="cat-item" href="games.html?genre=Horror" style="--glow: 153,27,27;"><div class="cat-ic" style="background:linear-gradient(145deg,#dc2626,#7f1d1d); box-shadow:0 4px 0 #450a0a,0 8px 16px rgba(153,27,27,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/PNG/Horror.png" alt="" aria-hidden="true"></div><div class="cat-name">Horror</div></a>
+<a class="cat-item" href="games.html?genre=Survival" style="--glow: 5,150,105;"><div class="cat-ic" style="background:linear-gradient(145deg,#34d399,#047857); box-shadow:0 4px 0 #064e3b,0 8px 16px rgba(5,150,105,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/PNG/Survival.png" alt="" aria-hidden="true"></div><div class="cat-name">Survival</div></a>
+<a class="cat-item" href="games.html?genre=Multiplayer" style="--glow: 56,189,248;"><div class="cat-ic" style="background:linear-gradient(145deg,#7dd3fc,#0369a1); box-shadow:0 4px 0 #0c4a6e,0 8px 16px rgba(56,189,248,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/PNG/Multiplayer.png" alt="" aria-hidden="true"></div><div class="cat-name">Multiplayer</div></a>
+<a class="cat-item" href="games.html?genre=Offline" style="--glow: 100,116,139;"><div class="cat-ic" style="background:linear-gradient(145deg,#94a3b8,#334155); box-shadow:0 4px 0 #1e293b,0 8px 16px rgba(100,116,139,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/PNG/Offline.png" alt="" aria-hidden="true"></div><div class="cat-name">Offline</div></a>
+<a class="cat-item" href="games.html?genre=Battle%20Royale" style="--glow: 225,29,72;"><div class="cat-ic" style="background:linear-gradient(145deg,#fb7185,#9f1239); box-shadow:0 4px 0 #4c0519,0 8px 16px rgba(225,29,72,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/PNG/BattleRoyale.png" alt="" aria-hidden="true"></div><div class="cat-name">Battle Royale</div></a>
+<a class="cat-item" href="games.html?genre=FPS" style="--glow: 139,92,246;"><div class="cat-ic" style="background:linear-gradient(145deg,#a78bfa,#6d28d9); box-shadow:0 4px 0 #4c1d95,0 8px 16px rgba(139,92,246,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/PNG/FPS.png" alt="" aria-hidden="true"></div><div class="cat-name">FPS</div></a>
+<a class="cat-item" href="games.html?genre=Fighting" style="--glow: 202,138,4;"><div class="cat-ic" style="background:linear-gradient(145deg,#facc15,#854d0e); box-shadow:0 4px 0 #422006,0 8px 16px rgba(202,138,4,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/PNG/Fighting.png" alt="" aria-hidden="true"></div><div class="cat-name">Fighting</div></a>
+<a class="cat-item" href="games.html?genre=Tower%20Defense" style="--glow: 101,163,13;"><div class="cat-ic" style="background:linear-gradient(145deg,#a3e635,#3f6212); box-shadow:0 4px 0 #1a2e05,0 8px 16px rgba(101,163,13,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/PNG/TowerDefense.png" alt="" aria-hidden="true"></div><div class="cat-name">Tower Defense</div></a>
+<a class="cat-item" href="games.html?genre=Kids" style="--glow: 234,179,8;"><div class="cat-ic" style="background:linear-gradient(145deg,#fde047,#a16207); box-shadow:0 4px 0 #713f12,0 8px 16px rgba(234,179,8,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/PNG/Kids.png" alt="" aria-hidden="true"></div><div class="cat-name">Kids</div></a>
+</div>
+<div class="sec-title" style="padding:12px 14px 4px">Apps</div>
+<div class="cat-grid" style="padding:6px 14px 20px;gap:10px;row-gap:24px">
+<a class="cat-item" href="apps.html?genre=AI" style="--glow: 6,182,212;"><div class="cat-ic" style="background:linear-gradient(145deg,#22d3ee,#0e7490); box-shadow:0 4px 0 #164e63,0 8px 16px rgba(6,182,212,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/AI.png" alt="" aria-hidden="true"></div><div class="cat-name">AI</div></a>
+<a class="cat-item" href="apps.html?genre=Editors" style="--glow: 139,92,246;"><div class="cat-ic" style="background:linear-gradient(145deg,#a78bfa,#6d28d9); box-shadow:0 4px 0 #4c1d95,0 8px 16px rgba(139,92,246,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Editors.png" alt="" aria-hidden="true"></div><div class="cat-name">Editors</div></a>
+<a class="cat-item" href="apps.html?genre=Streaming" style="--glow: 236,72,153;"><div class="cat-ic" style="background:linear-gradient(145deg,#f472b6,#be185d); box-shadow:0 4px 0 #831843,0 8px 16px rgba(236,72,153,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Streaming.png" alt="" aria-hidden="true"></div><div class="cat-name">Streaming</div></a>
+<a class="cat-item" href="apps.html?genre=Social" style="--glow: 14,165,233;"><div class="cat-ic" style="background:linear-gradient(145deg,#38bdf8,#0369a1); box-shadow:0 4px 0 #0c4a6e,0 8px 16px rgba(14,165,233,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Social.png" alt="" aria-hidden="true"></div><div class="cat-name">Social</div></a>
+<a class="cat-item" href="apps.html?genre=Browsers" style="--glow: 100,116,139;"><div class="cat-ic" style="background:linear-gradient(145deg,#94a3b8,#334155); box-shadow:0 4px 0 #1e293b,0 8px 16px rgba(100,116,139,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Browsers.png" alt="" aria-hidden="true"></div><div class="cat-name">Browsers</div></a>
+<a class="cat-item" href="apps.html?genre=VPN" style="--glow: 79,70,229;"><div class="cat-ic" style="background:linear-gradient(145deg,#818cf8,#3730a3); box-shadow:0 4px 0 #1e1b4b,0 8px 16px rgba(79,70,229,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/VPN.png" alt="" aria-hidden="true"></div><div class="cat-name">VPN</div></a>
+<a class="cat-item" href="apps.html?genre=File%20Manager" style="--glow: 161,98,7;"><div class="cat-ic" style="background:linear-gradient(145deg,#ca8a04,#78350f); box-shadow:0 4px 0 #451a03,0 8px 16px rgba(161,98,7,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/FileManager.png" alt="" aria-hidden="true"></div><div class="cat-name">File Manager</div></a>
+<a class="cat-item" href="apps.html?genre=Download%20Managers" style="--glow: 245,158,11;"><div class="cat-ic" style="background:linear-gradient(145deg,#fbbf24,#b45309); box-shadow:0 4px 0 #78350f,0 8px 16px rgba(245,158,11,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/DownloadManagers.png" alt="" aria-hidden="true"></div><div class="cat-name">Download Managers</div></a>
+<a class="cat-item" href="apps.html?genre=Music%20%26%20Audio" style="--glow: 124,58,237;"><div class="cat-ic" style="background:linear-gradient(145deg,#a78bfa,#5b21b6); box-shadow:0 4px 0 #3b0764,0 8px 16px rgba(124,58,237,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Music%26Audio.png" alt="" aria-hidden="true"></div><div class="cat-name">Music &amp; Audio</div></a>
+<a class="cat-item" href="apps.html?genre=Photography" style="--glow: 225,29,72;"><div class="cat-ic" style="background:linear-gradient(145deg,#fb7185,#9f1239); box-shadow:0 4px 0 #4c0519,0 8px 16px rgba(225,29,72,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Photography.png" alt="" aria-hidden="true"></div><div class="cat-name">Photography</div></a>
+<a class="cat-item" href="apps.html?genre=Video%20Players" style="--glow: 15,118,110;"><div class="cat-ic" style="background:linear-gradient(145deg,#2dd4bf,#115e59); box-shadow:0 4px 0 #042f2e,0 8px 16px rgba(15,118,110,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/VideoPlayers.png" alt="" aria-hidden="true"></div><div class="cat-name">Video Players</div></a>
+<a class="cat-item" href="apps.html?genre=Personalization" style="--glow: 109,40,217;"><div class="cat-ic" style="background:linear-gradient(145deg,#a78bfa,#5b21b6); box-shadow:0 4px 0 #3b0764,0 8px 16px rgba(109,40,217,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Personalization.png" alt="" aria-hidden="true"></div><div class="cat-name">Personalization</div></a>
+<a class="cat-item" href="apps.html?genre=Productivity" style="--glow: 16,185,129;"><div class="cat-ic" style="background:linear-gradient(145deg,#34d399,#047857); box-shadow:0 4px 0 #064e3b,0 8px 16px rgba(16,185,129,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Productivity.png" alt="" aria-hidden="true"></div><div class="cat-name">Productivity</div></a>
+<a class="cat-item" href="apps.html?genre=Education" style="--glow: 30,58,138;"><div class="cat-ic" style="background:linear-gradient(145deg,#3b82f6,#1e3a8a); box-shadow:0 4px 0 #172554,0 8px 16px rgba(30,58,138,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Education.png" alt="" aria-hidden="true"></div><div class="cat-name">Education</div></a>
+<a class="cat-item" href="apps.html?genre=Finance" style="--glow: 202,138,4;"><div class="cat-ic" style="background:linear-gradient(145deg,#facc15,#854d0e); box-shadow:0 4px 0 #422006,0 8px 16px rgba(202,138,4,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Finance.png" alt="" aria-hidden="true"></div><div class="cat-name">Finance</div></a>
+<a class="cat-item" href="apps.html?genre=Shopping" style="--glow: 244,63,94;"><div class="cat-ic" style="background:linear-gradient(145deg,#fb7185,#be123c); box-shadow:0 4px 0 #881337,0 8px 16px rgba(244,63,94,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Shopping.png" alt="" aria-hidden="true"></div><div class="cat-name">Shopping</div></a>
+<a class="cat-item" href="apps.html?genre=Health%20%26%20Fitness" style="--glow: 190,18,60;"><div class="cat-ic" style="background:linear-gradient(145deg,#fb7185,#9f1239); box-shadow:0 4px 0 #4c0519,0 8px 16px rgba(190,18,60,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Health%26Fitness.png" alt="" aria-hidden="true"></div><div class="cat-name">Health &amp; Fitness</div></a>
+<a class="cat-item" href="apps.html?genre=Maps%20%26%20Navigation" style="--glow: 101,163,13;"><div class="cat-ic" style="background:linear-gradient(145deg,#a3e635,#3f6212); box-shadow:0 4px 0 #1a2e05,0 8px 16px rgba(101,163,13,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Maps%26Navigation.png" alt="" aria-hidden="true"></div><div class="cat-name">Maps &amp; Navigation</div></a>
+<a class="cat-item" href="apps.html?genre=Communication" style="--glow: 8,145,178;"><div class="cat-ic" style="background:linear-gradient(145deg,#22d3ee,#155e75); box-shadow:0 4px 0 #083344,0 8px 16px rgba(8,145,178,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Communication.png" alt="" aria-hidden="true"></div><div class="cat-name">Communication</div></a>
+<a class="cat-item" href="apps.html?genre=Entertainment" style="--glow: 192,38,211;"><div class="cat-ic" style="background:linear-gradient(145deg,#e879f9,#86198f); box-shadow:0 4px 0 #4a044e,0 8px 16px rgba(192,38,211,0.55);"><img loading="lazy" width="24" height="24" decoding="async" src="https://apxmod.store/c/Entertainment.png" alt="" aria-hidden="true"></div><div class="cat-name">Entertainment</div></a>
+</div>
+<div class="copyright-bar"><div class="ftr-bottom"><div class="ftr-copy">&copy; <span id="ftrYear">2026</span> <b>APXMOD</b> &mdash; Safe &amp; Verified Android Apps.</div><div class="ftr-made">Built with <span class="ftr-heart">&hearts;</span> for the global gaming community.</div></div></div>
+</div>
+<script>
+const morePage=document.getElementById('pg-more');
+const moreHeader=document.getElementById('more-header');
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let headerH=moreHeader.offsetHeight;
+document.getElementById('backBtn').addEventListener('click',function(){if(history.length>1){history.back()}else{window.location.href='index.html'}});
+(function(){
+const tiles=document.querySelectorAll('.cat-item');
+if(reduceMotion||!('IntersectionObserver' in window))return;
+document.documentElement.classList.add('js-anim');
+const wait=function(ms){return new Promise(function(r){setTimeout(r,ms)})};
+const fontsReady=(document.fonts&&document.fonts.ready)?document.fonts.ready:Promise.resolve();
+const loaded=document.readyState==='complete'?Promise.resolve():new Promise(function(r){window.addEventListener('load',r,{once:true})});
+const ready=Promise.race([Promise.all([fontsReady,loaded]),wait(800)]);
+function reveal(batch){
+batch.forEach(function(t){t.classList.add('pre')});
+const imgs=batch.map(function(t){return t.querySelector('img')}).filter(Boolean);
+const decoded=Promise.race([Promise.all(imgs.map(function(i){return i.decode?i.decode().catch(function(){}):null})),wait(350)]);
+decoded.then(function(){
+requestAnimationFrame(function(){
+requestAnimationFrame(function(){
+batch.forEach(function(t,k){
+t.style.setProperty('--d',(Math.min(k,12)*35)+'ms');
+t.classList.add('in');
+const ic=t.querySelector('.cat-ic');
+(ic||t).addEventListener('animationend',function(){t.classList.add('done')},{once:true});
+});
+});
+});
+});
+}
+ready.then(function(){
+let left=tiles.length;
+const io=new IntersectionObserver(function(entries){
+const batch=[];
+entries.forEach(function(en){
+if(!en.isIntersecting)return;
+batch.push(en.target);
+io.unobserve(en.target);
+if(--left===0)io.disconnect();
+});
+if(batch.length)reveal(batch);
+},{root:morePage,threshold:.1});
+tiles.forEach(function(t){io.observe(t)});
+});
+})();
+let headerOffset=0;
+let lastY=morePage.scrollTop;
+let lastApply=-1;
+let ticking=false;
+function applyScroll(){
+const y=morePage.scrollTop;
+const diff=y-lastY;
+lastY=y;
+if(diff===0)return;
+headerOffset+=diff;
+if(headerOffset<0)headerOffset=0;
+if(headerOffset>headerH)headerOffset=headerH;
+if(headerOffset===lastApply)return;
+lastApply=headerOffset;
+moreHeader.style.transform='translate3d(0,'+(-headerOffset)+'px,0)';
+}
+if(!reduceMotion){
+morePage.addEventListener('scroll',function(){
+if(ticking)return;
+ticking=true;
+requestAnimationFrame(function(){ticking=false;applyScroll()});
+},{passive:true});
+}
+window.addEventListener('resize',function(){
+headerH=moreHeader.offsetHeight;
+if(headerOffset>headerH){
+headerOffset=headerH;
+moreHeader.style.transform='translate3d(0,'+(-headerOffset)+'px,0)';
+}
+},{passive:true});
+document.addEventListener('pointerdown',function(e){
+const el=e.target.closest('.hbtn');
+if(!el)return;
+el.classList.remove('tap-bounce');
+void el.offsetWidth;
+el.classList.add('tap-bounce');
+clearTimeout(el._bounceTimer);
+el._bounceTimer=setTimeout(function(){el.classList.remove('tap-bounce')},460);
+},{passive:true});
+(function(){
+const el=document.getElementById('ftrYear');
+if(!el)return;
+function update(){
+try{
+const y=new Date().getFullYear();
+el.textContent=(y>2026&&y<=9999)?'2026 - '+y:'2026';
+}catch(e){}
+}
+update();
+document.addEventListener('visibilitychange',update);
+window.addEventListener('pageshow',update);
+})();
+</script>
+</body>
+</html>
