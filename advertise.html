@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="color-scheme" content="only light">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="APXMOD Advertising — promotional opportunities for brands, developers, publishers and organizations reaching mobile app, game and tech audiences.">
+    <title>Advertise With Us — APXMOD</title>
+    <link rel="canonical" href="https://apxmod.com/advertise.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://apxmod.store">
+    <link rel="preload" as="image" href="https://apxmod.store/logo'.png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: only light;
+            --bg: #edf0f7; --sd: #c5c9d8; --sl: #ffffff;
+            --txt: #1a1d2b; --txt2: #7a7e92; --red: #e8192c;
+            --neu-in: inset 4px 4px 10px var(--sd), inset -3px -3px 7px var(--sl);
+            --card3d: 0 2px 0 rgba(255,255,255,0.95) inset, 0 10px 22px rgba(0,0,0,0.11), 0 4px 8px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.05);
+            --tap-down: 0.06s; --tap-up: 0.16s;
+            --tap-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+            --hdr-ease: 0.22s;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box; margin: 0; padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        html, body {
+            min-height: 100%; background: var(--bg);
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            color: var(--txt);
+            -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+        }
+        body { margin: 0; }
+        img { opacity: 0; transition: opacity 0.2s ease; }
+        img.img-loaded { opacity: 1; }
+        ::-webkit-scrollbar { width: 0; height: 0; }
+        .ab-wrap { background: var(--bg); min-height: 100vh; padding-bottom: 0; }
+        .ab-hdr {
+            background: #ffffff;
+            padding: 10px 18px 10px 0;
+            display: flex; align-items: center; gap: 11px;
+            position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            transform: translate3d(0, 0, 0);
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transition: transform var(--hdr-ease) cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .ab-back {
+            width: 38px; height: 38px; margin-left: 9px;
+            border-radius: 11px; background: var(--bg);
+            box-shadow: var(--neu-in); border: none;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; flex-shrink: 0; color: var(--txt);
+            transform: scale(1);
+            transition: transform var(--tap-up) var(--tap-spring);
+            text-decoration: none;
+        }
+        .ab-back:active {
+            transform: scale(0.85);
+            transition: transform var(--tap-down) ease-out;
+        }
+        .ab-back:focus-visible {
+            outline: 2px solid var(--red);
+            outline-offset: 2px;
+        }
+        .ab-back svg {
+            width: 18px; height: 18px; stroke: currentColor; fill: none;
+            stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+        }
+        .ab-hdr-title {
+            font-size: 15.5px; font-weight: 900; letter-spacing: -0.2px; color: var(--txt);
+        }
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translate3d(0, 22px, 0); }
+            100% { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        .ab-hero {
+            padding: 20px 22px 16px; text-align: center;
+            animation: fadeUp 0.5s var(--ease-out) 0.05s both;
+        }
+        .ab-hero-logo {
+            height: 46px; width: auto; max-width: 180px;
+            object-fit: contain; margin: 0 auto 12px; display: block;
+        }
+        .ab-hero-title {
+            font-size: 20px; font-weight: 900; letter-spacing: -0.3px;
+            line-height: 1.25; color: var(--txt); margin-bottom: 8px;
+        }
+        .ab-hero-sub {
+            font-size: 12px; color: var(--txt2); font-weight: 500;
+            line-height: 1.7; word-spacing: 0.8px;
+            max-width: 560px; margin: 0 auto;
+        }
+        .ab-updated {
+            display: inline-block; font-size: 10.5px; color: var(--red);
+            background: rgba(232,25,44,0.08); font-weight: 800;
+            letter-spacing: 0.4px; padding: 5px 12px; border-radius: 20px;
+            margin-bottom: 12px; text-transform: uppercase;
+        }
+        .ab-content { padding: 8px 16px 0; }
+        .ab-card {
+            background: linear-gradient(160deg, rgba(255,255,255,0.97), rgba(238,241,250,0.92));
+            border-top: 1.5px solid rgba(255,255,255,1);
+            border-left: 1.5px solid rgba(255,255,255,0.9);
+            border-right: 1.5px solid rgba(220,224,235,0.6);
+            border-bottom: 1.5px solid rgba(200,204,218,0.5);
+            box-shadow: var(--card3d); border-radius: 14px;
+            padding: 22px 20px; margin-bottom: 14px;
+            animation: fadeUp 0.5s var(--ease-out) both;
+        }
+        .ab-icon {
+            width: 42px; height: 42px; border-radius: 12px;
+            background: linear-gradient(145deg, #ff4040, #cc0000);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 0 #880000, 0 6px 14px rgba(232,25,44,0.32);
+            flex-shrink: 0;
+        }
+        .ab-icon svg {
+            width: 20px; height: 20px; stroke: #ffffff; fill: none;
+            stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+        }
+        .ab-step-num {
+            display: inline-block; font-size: 10px; color: var(--red);
+            background: rgba(232,25,44,0.10); font-weight: 900;
+            letter-spacing: 1.2px; padding: 3px 10px; border-radius: 20px;
+            margin-bottom: 8px; text-transform: uppercase;
+        }
+        .ab-title {
+            font-size: 16px; font-weight: 900; letter-spacing: -0.25px;
+            color: var(--txt); margin-bottom: 12px; line-height: 1.25;
+        }
+        .ab-text {
+            font-size: 12.5px; color: var(--txt2); font-weight: 500;
+            line-height: 1.8; word-spacing: 0.8px; letter-spacing: 0.05px;
+        }
+        .ab-text + .ab-text { margin-top: 12px; }
+        .ab-text strong { color: var(--txt); font-weight: 800; }
+        .ab-text .hl { color: var(--red); font-weight: 800; }
+        .ab-email-box {
+            display: flex; align-items: center; gap: 12px;
+            margin-top: 14px; padding: 16px 18px;
+            background: linear-gradient(135deg, rgba(232,25,44,0.08), rgba(232,25,44,0.02));
+            border: 1.5px solid rgba(232,25,44,0.22); border-radius: 12px;
+        }
+        .ab-email-icon {
+            width: 38px; height: 38px; border-radius: 10px;
+            background: linear-gradient(145deg, #ff4040, #cc0000);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 3px 0 #880000, 0 4px 10px rgba(232,25,44,0.30);
+        }
+        .ab-email-icon svg {
+            width: 18px; height: 18px; stroke: #ffffff; fill: none;
+            stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+        }
+        .ab-email-text {
+            font-size: 13px; font-weight: 900; color: var(--red);
+            letter-spacing: -0.1px; word-break: break-all; text-decoration: none;
+        }
+        .ab-email-text:hover { text-decoration: underline; }
+        .ab-list { list-style: none; padding: 0; margin-top: 12px; }
+        .ab-list li {
+            font-size: 12.5px; color: var(--txt2); font-weight: 600;
+            line-height: 1.6; padding-left: 24px; margin-bottom: 10px;
+            position: relative;
+        }
+        .ab-list li::before {
+            content: ''; position: absolute; left: 0; top: 6px;
+            width: 14px; height: 14px; border-radius: 50%;
+            background: linear-gradient(145deg, #ff4040, #cc0000);
+            box-shadow: 0 2px 5px rgba(232,25,44,0.40);
+        }
+        .ab-setup-box {
+            margin-top: 14px; padding: 18px 20px;
+            background: var(--bg); border-radius: 12px; box-shadow: var(--neu-in);
+        }
+        .ab-setup-item {
+            font-size: 12px; color: var(--txt); font-weight: 600;
+            line-height: 1.7; margin-bottom: 12px;
+            padding-left: 26px; position: relative;
+        }
+        .ab-setup-item:last-child { margin-bottom: 0; }
+        .ab-setup-item::before {
+            content: attr(data-n); position: absolute; left: 0; top: 1px;
+            width: 18px; height: 18px; border-radius: 50%;
+            background: linear-gradient(145deg, #ff4040, #cc0000);
+            color: #ffffff; font-size: 10px; font-weight: 900;
+            display: flex; align-items: center; justify-content: center; line-height: 1;
+        }
+        .ab-vision-quote {
+            margin-top: 14px; padding: 16px 18px;
+            background: linear-gradient(135deg, rgba(232,25,44,0.06), rgba(232,25,44,0.02));
+            border-left: 3px solid var(--red); border-radius: 4px 12px 12px 4px;
+            font-size: 12px; color: var(--txt); font-weight: 600;
+            line-height: 1.7; font-style: italic;
+        }
+        .ab-cta-box {
+            margin-top: 14px; padding: 20px 22px;
+            background: linear-gradient(145deg, #ff4040, #cc0000);
+            border-radius: 14px; text-align: center;
+            box-shadow: 0 4px 0 #880000, 0 8px 22px rgba(232,25,44,0.35);
+        }
+        .ab-cta-title {
+            font-size: 14px; font-weight: 900; color: #ffffff;
+            margin-bottom: 6px; letter-spacing: -0.2px;
+        }
+        .ab-cta-email {
+            font-size: 14px; font-weight: 900; color: #ffffff;
+            letter-spacing: -0.1px; word-break: break-all; text-decoration: none;
+        }
+        .ab-cta-email:hover { text-decoration: underline; }
+        .ab-ftr {
+            text-align: center; padding: 22px 22px 8px;
+            font-size: 11px; color: var(--txt2); font-weight: 600;
+            line-height: 1.7; word-spacing: 0.6px;
+        }
+        .ab-ftr b { color: var(--red); font-weight: 900; -webkit-text-stroke: .2px var(--red); }
+        .ftr-heart { color: var(--red); }
+        .ab-ftr .ab-made {
+            font-size: 10.5px; font-weight: 700; margin-top: 5px;
+            display: block; line-height: 1.6;
+        }
+        @media (max-width: 380px) {
+            .ab-hdr { padding: 8px 14px 8px 0; gap: 9px; }
+            .ab-back { width: 34px; height: 34px; margin-left: 7px; border-radius: 10px; }
+            .ab-back svg { width: 16px; height: 16px; }
+            .ab-hdr-title { font-size: 14px; }
+            .ab-hero-logo { height: 40px; max-width: 150px; }
+            .ab-hero-title { font-size: 18px; }
+            .ab-hero-sub { font-size: 11px; }
+            .ab-card { padding: 20px 16px; margin-bottom: 12px; }
+            .ab-title { font-size: 15px; }
+            .ab-text { font-size: 11.5px; line-height: 1.75; }
+            .ab-list li { font-size: 11.5px; padding-left: 22px; }
+            .ab-email-box { padding: 12px 14px; gap: 10px; }
+            .ab-email-icon { width: 34px; height: 34px; }
+            .ab-email-text { font-size: 11.5px; }
+            .ab-setup-box { padding: 14px 16px; }
+            .ab-setup-item { font-size: 11px; padding-left: 22px; }
+            .ab-setup-item::before { width: 16px; height: 16px; font-size: 9px; }
+            .ab-vision-quote { font-size: 11.5px; padding: 14px 14px; }
+            .ab-cta-box { padding: 16px 16px; }
+            .ab-cta-title { font-size: 13px; }
+            .ab-cta-email { font-size: 12.5px; }
+            .ab-ftr { font-size: 10.5px; padding: 18px 16px 6px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .ab-hero, .ab-card, .ab-ftr { animation: none; }
+            .ab-hdr { transition: none; }
+        }
+    </style>
+    <noscript><style>img{opacity:1!important}</style></noscript>
+</head>
+<body>
+
+<div class="ab-wrap">
+
+    <div class="ab-hdr" id="advHeader">
+        <a class="ab-back" href="index.html" onclick="goBack(event)" aria-label="Back">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </a>
+        <div class="ab-hdr-title">Advertise With Us</div>
+    </div>
+
+    <div class="ab-hero">
+        <img src="https://apxmod.store/logo'.png"
+             class="ab-hero-logo" alt="APXMOD"
+             onload="this.classList.add('img-loaded')"
+             onerror="this.style.display='none'">
+        <div class="ab-updated">Last Updated: October 2026</div>
+        <div class="ab-hero-title">Advertise With Us</div>
+        <div class="ab-hero-sub">
+            Advertising and promotional opportunities for brands, developers, publishers, and organizations reaching mobile-app, game, and tech audiences.
+        </div>
+    </div>
+
+    <div class="ab-content">
+
+        <div class="ab-card">
+            <div class="ab-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 11l18-5v12L3 14v-3z"/>
+                    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+                </svg>
+            </div>
+            <div class="ab-text">Welcome to APXMOD Advertising.</div>
+            <div class="ab-text">APXMOD is a growing digital platform focused on applications, games, digital content, discovery, reviews, and technology-related experiences.</div>
+            <div class="ab-text">We provide advertising and promotional opportunities for brands, developers, publishers, businesses, and organizations that want to reach an audience interested in mobile applications, games, technology, and digital products.</div>
+            <div class="ab-text">If you are interested in advertising on APXMOD or discussing a promotional partnership, please contact our advertising team:</div>
+            <div class="ab-email-box">
+                <div class="ab-email-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <a class="ab-email-text" href="mailto:ads@apxmod.com">ads@apxmod.com</a>
+            </div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 1</div>
+            <div class="ab-title">Advertising Opportunities</div>
+            <div class="ab-text">APXMOD may offer different advertising and promotional opportunities depending on availability, website design, audience, campaign requirements, and advertising policies.</div>
+            <div class="ab-text">Potential opportunities may include:</div>
+            <ul class="ab-list">
+                <li>Website advertising placements</li>
+                <li>Promotional banners</li>
+                <li>Application or game promotions</li>
+                <li>Sponsored promotional placements</li>
+                <li>Brand awareness campaigns</li>
+                <li>Technology and digital product promotions</li>
+                <li>Launch and announcement campaigns</li>
+                <li>Other promotional opportunities agreed upon with our advertising team</li>
+            </ul>
+            <div class="ab-text">Available advertising formats and placements may change as the platform evolves.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 2</div>
+            <div class="ab-title">Who Can Advertise?</div>
+            <div class="ab-text">Advertising opportunities may be available to a variety of legitimate organizations, including:</div>
+            <ul class="ab-list">
+                <li>Technology companies</li>
+                <li>Application developers</li>
+                <li>Game developers and publishers</li>
+                <li>Digital product companies</li>
+                <li>Online services</li>
+                <li>Software companies</li>
+                <li>Brands</li>
+                <li>Startups</li>
+                <li>Businesses</li>
+                <li>Organizations</li>
+                <li>Other legitimate commercial or non-commercial entities</li>
+            </ul>
+            <div class="ab-text">All advertising requests are subject to review and approval by the APXMOD team.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 3</div>
+            <div class="ab-title">Advertising Request Process</div>
+            <div class="ab-text">If you would like to advertise on APXMOD, please contact:</div>
+            <div class="ab-email-box">
+                <div class="ab-email-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <a class="ab-email-text" href="mailto:ads@apxmod.com">ads@apxmod.com</a>
+            </div>
+            <div class="ab-text" style="margin-top:14px;">For a faster and more accurate response, your initial inquiry should include:</div>
+            <div class="ab-setup-box">
+                <div class="ab-setup-item" data-n="1">Company or brand name</div>
+                <div class="ab-setup-item" data-n="2">Your name and position, where applicable</div>
+                <div class="ab-setup-item" data-n="3">Website or official online presence</div>
+                <div class="ab-setup-item" data-n="4">Product, application, game, service, or campaign being promoted</div>
+                <div class="ab-setup-item" data-n="5">Type of advertising you are interested in</div>
+                <div class="ab-setup-item" data-n="6">Preferred advertising format, if known</div>
+                <div class="ab-setup-item" data-n="7">Desired campaign duration</div>
+                <div class="ab-setup-item" data-n="8">Target audience or campaign objective</div>
+                <div class="ab-setup-item" data-n="9">Approximate campaign budget, if available</div>
+                <div class="ab-setup-item" data-n="10">Any relevant promotional materials</div>
+            </div>
+            <div class="ab-text" style="margin-top:14px;">Providing complete information helps our advertising team understand your requirements and prepare an appropriate proposal.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 4</div>
+            <div class="ab-title">Advertising Review</div>
+            <div class="ab-text">All advertising requests may be reviewed before approval.</div>
+            <div class="ab-text">Our team may evaluate factors such as:</div>
+            <ul class="ab-list">
+                <li>Legitimacy of the advertiser</li>
+                <li>Nature of the product or service</li>
+                <li>Accuracy of promotional claims</li>
+                <li>Relevance to the APXMOD audience</li>
+                <li>Technical quality of advertising material</li>
+                <li>Website or destination associated with the advertisement</li>
+                <li>Compliance with applicable laws</li>
+                <li>Compliance with APXMOD policies</li>
+                <li>Potential security or user-safety concerns</li>
+            </ul>
+            <div class="ab-text">Submitting an advertising request does not guarantee approval.</div>
+            <div class="ab-text">APXMOD may decline an advertising request when the proposed advertisement or destination does not meet our requirements.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 5</div>
+            <div class="ab-title">Prohibited Advertisements</div>
+            <div class="ab-text">APXMOD does not intend to provide advertising space for content that is illegal, harmful, deceptive, or inappropriate for our platform.</div>
+            <div class="ab-text">Depending on applicable laws and platform policies, advertisements may be rejected if they promote or contain:</div>
+            <ul class="ab-list">
+                <li>Pornography or sexually explicit content</li>
+                <li>Sexual services</li>
+                <li>Exploitative sexual material</li>
+                <li>Content involving the sexual exploitation of minors</li>
+                <li>Illegal products or services</li>
+                <li>Fraudulent schemes</li>
+                <li>Scams</li>
+                <li>Phishing services</li>
+                <li>Malware or malicious software</li>
+                <li>Credential theft</li>
+                <li>Hacking services intended for unlawful purposes</li>
+                <li>Deceptive or misleading offers</li>
+                <li>Counterfeit products</li>
+                <li>Content designed to facilitate serious criminal activity</li>
+                <li>Hate-based or violent extremist material</li>
+                <li>Content that creates significant user-safety risks</li>
+                <li>Other content that violates applicable law or APXMOD policies</li>
+            </ul>
+            <div class="ab-text">We may also reject advertising that is inconsistent with the professional and user-focused nature of the platform.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 6</div>
+            <div class="ab-title">Advertising Content Requirements</div>
+            <div class="ab-text">Advertisers are responsible for ensuring that the materials they provide are accurate and lawful.</div>
+            <div class="ab-text">Advertising materials should:</div>
+            <ul class="ab-list">
+                <li>Clearly represent the promoted product or service</li>
+                <li>Avoid misleading claims</li>
+                <li>Use appropriate images and language</li>
+                <li>Respect intellectual property rights</li>
+                <li>Not impersonate another company or organization</li>
+                <li>Not contain malicious code</li>
+                <li>Not intentionally mislead users</li>
+                <li>Comply with applicable advertising laws and regulations</li>
+            </ul>
+            <div class="ab-text">Advertisers should ensure that they have the necessary rights to use all logos, images, videos, trademarks, text, and other materials included in their advertisements.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 7</div>
+            <div class="ab-title">Destination Website Requirements</div>
+            <div class="ab-text">If an advertisement directs users to an external website, application, service, or download page, the destination may also be reviewed.</div>
+            <div class="ab-text">We may reject or discontinue advertisements directing users to destinations that appear to:</div>
+            <ul class="ab-list">
+                <li>Distribute malware</li>
+                <li>Conduct phishing</li>
+                <li>Collect information through deceptive means</li>
+                <li>Promote illegal activity</li>
+                <li>Contain prohibited sexual content</li>
+                <li>Operate fraudulent schemes</li>
+                <li>Misrepresent products or services</li>
+                <li>Create significant security risks</li>
+                <li>Violate applicable laws</li>
+            </ul>
+            <div class="ab-text">Approval of an advertisement does not mean that APXMOD permanently endorses or guarantees the advertiser or its products.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 8</div>
+            <div class="ab-title">Sponsored Content and Promotional Material</div>
+            <div class="ab-text">Where applicable, paid promotional content may be identified as sponsored, promoted, or advertising content so that users can distinguish commercial material from ordinary editorial or community content.</div>
+            <div class="ab-text">Advertising and sponsorship do not automatically determine APXMOD's editorial decisions.</div>
+            <div class="ab-text">Our editorial and verification processes may remain separate from commercial arrangements.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 9</div>
+            <div class="ab-title">Advertising Does Not Guarantee Endorsement</div>
+            <div class="ab-text">An advertisement appearing on APXMOD should not automatically be interpreted as an endorsement, certification, partnership, or guarantee by APXMOD unless explicitly stated.</div>
+            <div class="ab-text">Advertisers remain responsible for their own products, services, claims, websites, and promotional materials.</div>
+            <div class="ab-text">Users should independently evaluate third-party products and services before purchasing, downloading, subscribing, or providing personal information.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 10</div>
+            <div class="ab-title">Advertising Pricing</div>
+            <div class="ab-text">Advertising pricing may vary depending on factors such as:</div>
+            <ul class="ab-list">
+                <li>Advertising format</li>
+                <li>Placement</li>
+                <li>Campaign duration</li>
+                <li>Campaign requirements</li>
+                <li>Promotional scope</li>
+                <li>Availability</li>
+                <li>Traffic and audience considerations</li>
+                <li>Custom campaign requirements</li>
+            </ul>
+            <div class="ab-text">There may not be a single fixed public advertising price for every advertising format.</div>
+            <div class="ab-text">Our advertising team can provide available options and pricing after reviewing the campaign requirements.</div>
+            <div class="ab-email-box">
+                <div class="ab-email-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <a class="ab-email-text" href="mailto:ads@apxmod.com">ads@apxmod.com</a>
+            </div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 11</div>
+            <div class="ab-title">Campaign Duration and Availability</div>
+            <div class="ab-text">Advertising placements are subject to availability.</div>
+            <div class="ab-text">Campaigns may be arranged for specific periods depending on the agreed advertising package.</div>
+            <div class="ab-text">Campaign availability, placement, format, and technical specifications may change as the APXMOD website evolves.</div>
+            <div class="ab-text">Any specific campaign terms should be confirmed with our advertising team before payment or publication.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 12</div>
+            <div class="ab-title">Advertisement Changes and Removal</div>
+            <div class="ab-text">APXMOD may request changes to advertising material if it does not meet our requirements.</div>
+            <div class="ab-text">We may also suspend or remove an advertisement where reasonably necessary, including circumstances involving:</div>
+            <ul class="ab-list">
+                <li>Policy violations</li>
+                <li>Legal complaints</li>
+                <li>Security concerns</li>
+                <li>Misleading information</li>
+                <li>Material changes to the advertised product</li>
+                <li>Harmful or deceptive behavior</li>
+                <li>Problems with the destination website</li>
+                <li>Copyright or intellectual-property concerns</li>
+                <li>Other legitimate platform or user-safety considerations</li>
+            </ul>
+            <div class="ab-text">Where appropriate, we may contact the advertiser before taking action.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 13</div>
+            <div class="ab-title">Advertiser Responsibilities</div>
+            <div class="ab-text">Advertisers are responsible for:</div>
+            <ul class="ab-list">
+                <li>The accuracy of their advertising claims</li>
+                <li>The legality of their products and services</li>
+                <li>Their advertising materials</li>
+                <li>Their destination websites</li>
+                <li>Their intellectual-property rights</li>
+                <li>Compliance with applicable advertising laws</li>
+                <li>Compliance with applicable privacy requirements</li>
+                <li>Providing accurate contact information</li>
+                <li>Informing APXMOD about material changes affecting an active campaign</li>
+            </ul>
+            <div class="ab-text">Advertisers should not provide misleading, fraudulent, or unauthorized materials.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 14</div>
+            <div class="ab-title">Intellectual Property</div>
+            <div class="ab-text">Advertisers must have appropriate rights or authorization to use all materials submitted for advertising.</div>
+            <div class="ab-text">This may include:</div>
+            <ul class="ab-list">
+                <li>Logos</li>
+                <li>Brand names</li>
+                <li>Product images</li>
+                <li>Screenshots</li>
+                <li>Videos</li>
+                <li>Music</li>
+                <li>Written content</li>
+                <li>Trademarks</li>
+                <li>Promotional artwork</li>
+            </ul>
+            <div class="ab-text">By submitting advertising materials to APXMOD, the advertiser represents that they have the necessary rights or authorization to provide those materials for the agreed advertising purpose.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 15</div>
+            <div class="ab-title">Advertising and User Privacy</div>
+            <div class="ab-text">Advertising campaigns may involve third-party advertising technologies depending on the advertising system and services used by the platform.</div>
+            <div class="ab-text">The handling of personal information and advertising-related technologies is subject to our Privacy Policy and, where applicable, the policies of the relevant third-party advertising provider.</div>
+            <div class="ab-text">APXMOD does not represent that every advertisement or advertising technology operates independently of third-party systems.</div>
+            <div class="ab-text">Advertisers must not request unnecessary personal information from APXMOD users through advertising campaigns.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 16</div>
+            <div class="ab-title">Advertising Performance</div>
+            <div class="ab-text">Where applicable, campaign performance information may be discussed with advertisers.</div>
+            <div class="ab-text">Depending on the advertising format and available systems, this may include general metrics such as:</div>
+            <ul class="ab-list">
+                <li>Impressions</li>
+                <li>Clicks</li>
+                <li>Campaign duration</li>
+                <li>General engagement information</li>
+                <li>Other relevant campaign statistics</li>
+            </ul>
+            <div class="ab-text">Specific reporting capabilities may vary by advertising format.</div>
+            <div class="ab-text">No particular level of traffic, impressions, clicks, conversions, downloads, sales, or revenue is guaranteed unless explicitly agreed in writing.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 17</div>
+            <div class="ab-title">No Guaranteed Results</div>
+            <div class="ab-text">Advertising on APXMOD does not guarantee:</div>
+            <ul class="ab-list">
+                <li>A specific number of visitors</li>
+                <li>A specific number of clicks</li>
+                <li>Downloads</li>
+                <li>Purchases</li>
+                <li>Registrations</li>
+                <li>Revenue</li>
+                <li>Conversions</li>
+                <li>Social-media growth</li>
+                <li>Any particular business result</li>
+            </ul>
+            <div class="ab-text">Advertising performance can depend on many factors outside the control of APXMOD.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 18</div>
+            <div class="ab-title">Advertising Partnerships</div>
+            <div class="ab-text">APXMOD may consider longer-term advertising or promotional partnerships with suitable organizations.</div>
+            <div class="ab-text">Partnership arrangements may include customized promotional campaigns, recurring advertising placements, launch campaigns, or other mutually agreed promotional activities.</div>
+            <div class="ab-text">Any partnership arrangement should be discussed directly with our advertising team.</div>
+            <div class="ab-email-box">
+                <div class="ab-email-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <a class="ab-email-text" href="mailto:ads@apxmod.com">ads@apxmod.com</a>
+            </div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 19</div>
+            <div class="ab-title">Payment and Campaign Confirmation</div>
+            <div class="ab-text">Where an advertising campaign involves payment, campaign details should be confirmed before the campaign begins.</div>
+            <div class="ab-text">Depending on the arrangement, confirmation may include:</div>
+            <ul class="ab-list">
+                <li>Advertising format</li>
+                <li>Placement</li>
+                <li>Campaign duration</li>
+                <li>Price</li>
+                <li>Payment terms</li>
+                <li>Advertising materials</li>
+                <li>Publication date</li>
+                <li>Additional campaign requirements</li>
+            </ul>
+            <div class="ab-text">Advertisers should not assume that an advertising request has been approved until confirmation is received from the APXMOD advertising team.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 20</div>
+            <div class="ab-title">Advertising Fraud and Abuse</div>
+            <div class="ab-text">APXMOD does not support fraudulent advertising activity.</div>
+            <div class="ab-text">We may investigate advertisements that appear to involve:</div>
+            <ul class="ab-list">
+                <li>Fake offers</li>
+                <li>Misleading promotions</li>
+                <li>Fake discounts</li>
+                <li>Phishing</li>
+                <li>Malware</li>
+                <li>Fake applications</li>
+                <li>Fraudulent services</li>
+                <li>Unauthorized brand use</li>
+                <li>Deceptive redirects</li>
+                <li>Other abusive advertising practices</li>
+            </ul>
+            <div class="ab-text">Where necessary, an advertisement may be suspended or removed.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 21</div>
+            <div class="ab-title">Reporting an Advertisement</div>
+            <div class="ab-text">If you believe that an advertisement displayed on APXMOD is:</div>
+            <ul class="ab-list">
+                <li>Malicious</li>
+                <li>Fraudulent</li>
+                <li>Misleading</li>
+                <li>Inappropriate</li>
+                <li>Copyright infringing</li>
+                <li>Unsafe</li>
+                <li>Connected to phishing or malware</li>
+                <li>Otherwise violating our policies</li>
+            </ul>
+            <div class="ab-text">please report it to:</div>
+            <div class="ab-email-box">
+                <div class="ab-email-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <a class="ab-email-text" href="mailto:ads@apxmod.com">ads@apxmod.com</a>
+            </div>
+            <div class="ab-text" style="margin-top:12px;">Please include the advertisement, relevant URL, screenshots, and a clear explanation of the concern where possible.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 22</div>
+            <div class="ab-title">How to Contact Our Advertising Team</div>
+            <div class="ab-text">For all advertising, sponsorship, promotional, and partnership inquiries:</div>
+            <div class="ab-text" style="margin-top:10px;"><strong>APXMOD Advertising Team</strong></div>
+            <div class="ab-email-box">
+                <div class="ab-email-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <a class="ab-email-text" href="mailto:ads@apxmod.com">ads@apxmod.com</a>
+            </div>
+            <div class="ab-text" style="margin-top:14px;"><strong>Suggested Subject Lines:</strong></div>
+            <div class="ab-setup-box">
+                <div class="ab-setup-item" data-n="1">Advertising Inquiry — [Company/Brand Name]</div>
+                <div class="ab-setup-item" data-n="2">Advertise With APXMOD — [Campaign Name]</div>
+                <div class="ab-setup-item" data-n="3">Sponsorship Inquiry — [Company Name]</div>
+                <div class="ab-setup-item" data-n="4">Promotional Partnership — [Company Name]</div>
+            </div>
+            <div class="ab-text" style="margin-top:14px;">For general website support, please use:</div>
+            <div class="ab-email-box">
+                <div class="ab-email-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <a class="ab-email-text" href="mailto:support@apxmod.com">support@apxmod.com</a>
+            </div>
+            <div class="ab-text" style="margin-top:14px;">For copyright and DMCA matters:</div>
+            <div class="ab-email-box">
+                <div class="ab-email-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <a class="ab-email-text" href="mailto:dmca@apxmod.com">dmca@apxmod.com</a>
+            </div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 23</div>
+            <div class="ab-title">Response Time</div>
+            <div class="ab-text">Our advertising team aims to respond to legitimate advertising and partnership inquiries within <span class="hl">24 hours</span> where reasonably possible.</div>
+            <div class="ab-text">Complex campaign proposals, customized advertising packages, partnership requests, or pricing discussions may require additional time.</div>
+            <div class="ab-text">Providing complete campaign information in your first email can help us respond more efficiently.</div>
+        </div>
+
+        <div class="ab-card">
+            <div class="ab-step-num">Section 24</div>
+            <div class="ab-title">Final Statement</div>
+            <div class="ab-text">APXMOD aims to maintain advertising standards that are consistent with a professional, secure, transparent, and user-focused digital platform.</div>
+            <div class="ab-text">We welcome legitimate businesses, developers, publishers, brands, and organizations interested in reaching an audience interested in applications, games, technology, and digital products.</div>
+            <div class="ab-text">Every advertising opportunity remains subject to availability, review, applicable policies, and the specific terms agreed between the advertiser and APXMOD.</div>
+
+            <div class="ab-cta-box">
+                <div class="ab-cta-title">Interested in Advertising on APXMOD?</div>
+                <a class="ab-cta-email" href="mailto:ads@apxmod.com">ads@apxmod.com</a>
+            </div>
+
+            <div class="ab-vision-quote">
+                "APXMOD — Discover. Explore. Connect. Grow."
+            </div>
+        </div>
+
+    </div>
+
+    <div class="ab-ftr">
+        © <span id="advYear">2026</span> <b>APXMOD</b> — Safe &amp; Verified Android Apps.
+        <span class="ab-made">Built with <span class="ftr-heart">&hearts;</span> for the global gaming community.</span>
+    </div>
+
+</div>
+
+<script>
+    function goBack(e) {
+        if (document.referrer && document.referrer !== '') {
+            e.preventDefault();
+            history.back();
+        }
+    }
+    (function initHeaderScroll() {
+        var hdrEl = document.getElementById('advHeader');
+        if (!hdrEl) return;
+        var hdrHeight = hdrEl.offsetHeight || 56;
+        var lastY = 0;
+        var offset = 0;
+        var ticking = false;
+        var THRESHOLD = 2;
+        window.addEventListener('resize', function() {
+            hdrHeight = hdrEl.offsetHeight || 56;
+        }, { passive: true });
+        function update() {
+            var curY = window.pageYOffset
+                    || document.documentElement.scrollTop
+                    || 0;
+            var delta = curY - lastY;
+            if (Math.abs(delta) < THRESHOLD && curY > 0) {
+                ticking = false;
+                return;
+            }
+            lastY = curY;
+            if (curY <= 0) {
+                offset = 0;
+            } else {
+                offset += delta;
+                if (offset < 0)          offset = 0;
+                if (offset > hdrHeight)  offset = hdrHeight;
+            }
+            hdrEl.style.transform = 'translate3d(0,' + (-offset) + 'px,0)';
+            hdrEl.style.pointerEvents = (offset >= hdrHeight - 1) ? 'none' : 'auto';
+            ticking = false;
+        }
+        window.addEventListener('scroll', function() {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(update);
+        }, { passive: true });
+    })();
+    (function() {
+        var cy = new Date().getFullYear();
+        var el = document.getElementById('advYear');
+        if (el) el.textContent = cy;
+    })();
+</script>
+
+</body>
+</html>

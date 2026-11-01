@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="color-scheme" content="only light">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Contact APXMOD — questions, technical assistance, security reports, content corrections, DMCA requests and general feedback.">
+    <title>Contact Us — APXMOD</title>
+    <link rel="canonical" href="https://apxmod.com/contact.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://apxmod.store">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: only light;
+            --bg    : #edf0f7;
+            --sd    : #c5c9d8;
+            --sl    : #ffffff;
+            --txt   : #1a1d2b;
+            --txt2  : #7a7e92;
+            --red   : #e8192c;
+            --neu-in : inset 4px 4px 10px var(--sd), inset -3px -3px 7px var(--sl);
+            --card3d : 0 2px 0 rgba(255,255,255,0.95) inset,
+                       0 10px 22px rgba(0,0,0,0.11),
+                       0 4px 8px rgba(0,0,0,0.07),
+                       0 1px 3px rgba(0,0,0,0.05);
+            --tap-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-out : cubic-bezier(0.22, 1, 0.36, 1);
+            --hdr-ease : 0.22s;
+        }
+        *, *::before, *::after {
+            box-sizing : border-box;
+            margin     : 0;
+            padding    : 0;
+            -webkit-tap-highlight-color : transparent;
+        }
+        html, body {
+            min-height  : 100%;
+            background  : var(--bg);
+            font-family : 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            color       : var(--txt);
+            -webkit-font-smoothing  : antialiased;
+            -moz-osx-font-smoothing : grayscale;
+        }
+        body { margin: 0; }
+        img { opacity: 0; transition: opacity 0.2s ease; }
+        img.img-loaded { opacity: 1; }
+        ::-webkit-scrollbar { width: 0; height: 0; }
+        @keyframes tapBounce {
+            0%   { transform: scale(1); }
+            25%  { transform: scale(0.86); }
+            55%  { transform: scale(1.08); }
+            80%  { transform: scale(0.98); }
+            100% { transform: scale(1); }
+        }
+        .tap-bounce {
+            animation: tapBounce 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+            will-change: transform;
+        }
+        .pg { display: flex; flex-direction: column; min-height: 100vh; }
+        .ab-wrap { flex: 1; background: var(--bg); padding-bottom: 0; }
+        .ab-hdr {
+            background      : #ffffff;
+            padding         : 10px 18px 10px 0;
+            display         : flex;
+            align-items     : center;
+            gap             : 11px;
+            position        : sticky;
+            top             : 0;
+            z-index         : 100;
+            box-shadow      : 0 2px 12px rgba(0,0,0,0.10);
+            backface-visibility: hidden;
+            will-change     : transform;
+            transition      : transform var(--hdr-ease) cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .ab-back {
+            width: 38px; height: 38px;
+            margin-left: 9px;
+            border-radius: 11px;
+            background: var(--bg);
+            box-shadow: var(--neu-in);
+            border: none;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            color: var(--txt);
+            transform: translate3d(0,0,0) scale(1);
+            transition: transform 0.16s var(--tap-spring);
+        }
+        .ab-back:active {
+            transform: translate3d(0,0,0) scale(0.85);
+            transition: transform 0.06s ease-out;
+        }
+        .ab-back:focus-visible {
+            outline: 2px solid var(--red);
+            outline-offset: 2px;
+        }
+        .ab-back svg {
+            width: 18px; height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .ab-hdr-title {
+            font-size: 15.5px;
+            font-weight: 900;
+            letter-spacing: -0.2px;
+            color: var(--txt);
+        }
+        @keyframes fadeUp {
+            0%   { opacity: 0; transform: translate3d(0, 22px, 0); }
+            100% { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        .ab-hero {
+            padding: 20px 22px 16px;
+            text-align: center;
+            animation: fadeUp 0.5s var(--ease-out) 0.05s both;
+        }
+        .ab-hero-logo {
+            height: 46px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+            margin: 0 auto 12px;
+            display: block;
+        }
+        .ab-hero-title {
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: -0.3px;
+            line-height: 1.25;
+            color: var(--txt);
+            margin-bottom: 8px;
+        }
+        .ab-hero-sub {
+            font-size: 12px;
+            color: var(--txt2);
+            font-weight: 500;
+            line-height: 1.7;
+            word-spacing: 0.8px;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .ab-updated {
+            display: inline-block;
+            font-size: 10.5px;
+            color: var(--red);
+            background: rgba(232,25,44,0.08);
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .ab-content { padding: 8px 16px 0; }
+        .ab-card {
+            background: linear-gradient(160deg, rgba(255,255,255,0.97), rgba(238,241,250,0.92));
+            border-top: 1.5px solid rgba(255,255,255,1);
+            border-left: 1.5px solid rgba(255,255,255,0.9);
+            border-right: 1.5px solid rgba(220,224,235,0.6);
+            border-bottom: 1.5px solid rgba(200,204,218,0.5);
+            box-shadow: var(--card3d);
+            border-radius: 14px;
+            padding: 22px 20px;
+            margin-bottom: 14px;
+            animation: fadeUp 0.5s var(--ease-out) both;
+        }
+        .ab-card:nth-child(1)  { animation-delay: 0.05s; }
+        .ab-card:nth-child(2)  { animation-delay: 0.09s; }
+        .ab-card:nth-child(3)  { animation-delay: 0.13s; }
+        .ab-card:nth-child(4)  { animation-delay: 0.17s; }
+        .ab-card:nth-child(5)  { animation-delay: 0.21s; }
+        .ab-card:nth-child(6)  { animation-delay: 0.25s; }
+        .ab-card:nth-child(7)  { animation-delay: 0.29s; }
+        .ab-card:nth-child(8)  { animation-delay: 0.33s; }
+        .ab-card:nth-child(9)  { animation-delay: 0.37s; }
+        .ab-card:nth-child(10) { animation-delay: 0.41s; }
+        .ab-card:nth-child(11) { animation-delay: 0.45s; }
+        .ab-card:nth-child(12) { animation-delay: 0.49s; }
+        .ab-card:nth-child(13) { animation-delay: 0.53s; }
+        .ab-card:nth-child(14) { animation-delay: 0.57s; }
+        .ab-icon {
+            width: 42px; height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #ff4040, #cc0000);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 0 #880000, 0 6px 14px rgba(232,25,44,0.32);
+            flex-shrink: 0;
+        }
+        .ab-icon svg {
+            width: 20px; height: 20px;
+            stroke: #ffffff;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .ab-title {
+            font-size: 16px;
+            font-weight: 900;
+            letter-spacing: -0.25px;
+            color: var(--txt);
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+        .ab-text {
+            font-size: 12.5px;
+            color: var(--txt2);
+            font-weight: 500;
+            line-height: 1.8;
+            word-spacing: 0.8px;
+            letter-spacing: 0.05px;
+        }
+        .ab-text + .ab-text { margin-top: 12px; }
+        .ab-text strong { color: var(--txt); font-weight: 800; }
+        .ab-text .hl { color: var(--red); font-weight: 800; }
+        .ab-email-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 14px;
+            padding: 16px 18px;
+            background: linear-gradient(135deg, rgba(232,25,44,0.08), rgba(232,25,44,0.02));
+            border: 1.5px solid rgba(232,25,44,0.22);
+            border-radius: 12px;
+        }
+        .ab-email-icon {
+            width: 38px; height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(145deg, #ff4040, #cc0000);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 3px 0 #880000, 0 4px 10px rgba(232,25,44,0.30);
+        }
+        .ab-email-icon svg {
+            width: 18px; height: 18px;
+            stroke: #ffffff;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .ab-email-text {
+            font-size: 13px;
+            font-weight: 900;
+            color: var(--red);
+            letter-spacing: -0.1px;
+            word-break: break-all;
+            text-decoration: none;
+        }
+        .ab-email-text:hover { text-decoration: underline; }
+        .ab-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+        }
+        .ab-list li {
+            font-size: 12.5px;
+            color: var(--txt2);
+            font-weight: 600;
+            line-height: 1.6;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .ab-list li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 6px;
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #ff4040, #cc0000);
+            box-shadow: 0 2px 5px rgba(232,25,44,0.40);
+        }
+        .ab-principles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 14px;
+        }
+        .ab-principle {
+            padding: 12px 12px 12px 14px;
+            background: var(--bg);
+            border-radius: 11px;
+            box-shadow: var(--neu-in);
+        }
+        .ab-principle-title {
+            font-size: 12px;
+            font-weight: 900;
+            color: var(--txt);
+            margin-bottom: 4px;
+            letter-spacing: -0.1px;
+        }
+        .ab-principle-desc {
+            font-size: 10.5px;
+            color: var(--txt2);
+            font-weight: 600;
+            line-height: 1.55;
+        }
+        .ab-principle-full { grid-column: 1 / -1; }
+        .ab-subject-box {
+            margin-top: 12px;
+            padding: 14px 16px;
+            background: var(--bg);
+            border-radius: 11px;
+            box-shadow: var(--neu-in);
+        }
+        .ab-subject-line {
+            font-size: 12px;
+            color: var(--txt);
+            font-weight: 700;
+            line-height: 1.9;
+            word-spacing: 0.5px;
+        }
+        .ab-subject-line span {
+            color: var(--red);
+            font-weight: 800;
+        }
+        .ab-warning-box {
+            margin-top: 14px;
+            padding: 14px 16px;
+            background: linear-gradient(135deg, rgba(232,25,44,0.06), rgba(232,25,44,0.02));
+            border-left: 3px solid var(--red);
+            border-radius: 4px 12px 12px 4px;
+            font-size: 12px;
+            color: var(--txt);
+            font-weight: 600;
+            line-height: 1.7;
+        }
+        .ab-warning-box strong { color: var(--red); font-weight: 900; }
+        .ab-vision-quote {
+            margin-top: 14px;
+            padding: 16px 18px;
+            background: linear-gradient(135deg, rgba(232,25,44,0.06), rgba(232,25,44,0.02));
+            border-left: 3px solid var(--red);
+            border-radius: 4px 12px 12px 4px;
+            font-size: 12px;
+            color: var(--txt);
+            font-weight: 600;
+            line-height: 1.7;
+            font-style: italic;
+        }
+        .ab-ftr {
+            text-align: center;
+            padding: 22px 22px 8px;
+            font-size: 11px;
+            color: var(--txt2);
+            font-weight: 600;
+            line-height: 1.7;
+            word-spacing: 0.6px;
+            animation: fadeUp 0.5s var(--ease-out) 0.35s both;
+        }
+        .ab-ftr b { color: var(--red); font-weight: 900; -webkit-text-stroke: .2px var(--red); }
+        .ftr-heart { color: var(--red); }
+        .ab-ftr .ab-made {
+            font-size: 10.5px;
+            font-weight: 700;
+            margin-top: 5px;
+            display: block;
+            line-height: 1.6;
+        }
+        @media (max-width: 380px) {
+            .ab-hdr { padding: 8px 14px 8px 0; gap: 9px; }
+            .ab-back { width: 34px; height: 34px; margin-left: 7px; border-radius: 10px; }
+            .ab-back svg { width: 16px; height: 16px; }
+            .ab-hdr-title { font-size: 14px; }
+            .ab-hero-logo { height: 40px; max-width: 150px; }
+            .ab-hero-title { font-size: 18px; }
+            .ab-hero-sub { font-size: 11px; }
+            .ab-card { padding: 20px 16px; margin-bottom: 12px; }
+            .ab-title { font-size: 15px; }
+            .ab-text { font-size: 11.5px; line-height: 1.75; }
+            .ab-list li { font-size: 11.5px; padding-left: 22px; }
+            .ab-principle-title { font-size: 11px; }
+            .ab-principle-desc { font-size: 10px; }
+            .ab-email-box { padding: 12px 14px; gap: 10px; }
+            .ab-email-icon { width: 34px; height: 34px; }
+            .ab-email-text { font-size: 11.5px; }
+            .ab-subject-box { padding: 12px 14px; }
+            .ab-subject-line { font-size: 11px; }
+            .ab-warning-box { font-size: 11px; padding: 12px 14px; }
+            .ab-vision-quote { font-size: 11.5px; padding: 14px 14px; }
+            .ab-ftr { font-size: 10.5px; padding: 18px 16px 6px; }
+        }
+        @media (max-width: 340px) {
+            .ab-principles { grid-template-columns: 1fr; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .ab-hero, .ab-card, .ab-ftr { animation: none; }
+            .ab-hdr { transition: none; }
+            .tap-bounce { animation: none !important; }
+        }
+    </style>
+    <noscript><style>img{opacity:1!important;}</style></noscript>
+</head>
+<body>
+<div class="pg" id="pg-contact">
+    <div class="ab-wrap">
+        <div class="ab-hdr" id="cuHeader">
+            <button class="ab-back" onclick="goBack()" aria-label="Back">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="ab-hdr-title">Contact Us</div>
+        </div>
+        <div class="ab-hero">
+            <img src="https://apxmod.store/logo'.png"
+                 class="ab-hero-logo"
+                 alt="APXMOD"
+                 onload="this.classList.add('img-loaded')"
+                 onerror="this.style.display='none'">
+            <div class="ab-updated">Last Updated: October 2026</div>
+            <div class="ab-hero-title">Contact Us</div>
+            <div class="ab-hero-sub">
+                Whether you have a question, need assistance, want to report an issue, or have a concern about content — our team is available to review your request.
+            </div>
+        </div>
+        <div class="ab-content">
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </div>
+                <div class="ab-title">We're Here to Help</div>
+                <div class="ab-text">
+                    Welcome to the APXMOD Contact Center.
+                </div>
+                <div class="ab-text">
+                    Whether you have a question about our platform, need assistance with an application or game, want to report an issue, or have a concern regarding content published on our website, our team is available to review your request.
+                </div>
+                <div class="ab-text">
+                    APXMOD is operated by a dedicated team, and incoming requests may be reviewed by the appropriate team member depending on the nature of the inquiry.
+                </div>
+                <div class="ab-text">
+                    We aim to handle legitimate requests carefully, professionally, and as efficiently as possible.
+                </div>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <div class="ab-title">Contact Our Team</div>
+                <div class="ab-text">
+                    For general questions, technical assistance, content-related concerns, feedback, or other inquiries, please contact us at:
+                </div>
+                <div class="ab-email-box">
+                    <div class="ab-email-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <a class="ab-email-text" href="mailto:support@apxmod.com">support@apxmod.com</a>
+                </div>
+                <div class="ab-text" style="margin-top:12px;">
+                    When contacting us, please provide enough information for our team to understand and investigate your request.
+                </div>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    </svg>
+                </div>
+                <div class="ab-title">What Can You Contact Us About?</div>
+                <div class="ab-text">
+                    We handle a variety of requests across different areas of the platform. Below are some of the most common reasons users contact our team.
+                </div>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                </div>
+                <div class="ab-title">General Support</div>
+                <div class="ab-text">
+                    For general questions about APXMOD, our platform, available features, accounts, or other website-related matters, you can contact our support team.
+                </div>
+                <div class="ab-text">
+                    Examples include:
+                </div>
+                <ul class="ab-list">
+                    <li>Questions about using the website</li>
+                    <li>Account-related questions</li>
+                    <li>Questions about platform features</li>
+                    <li>General website assistance</li>
+                    <li>Feedback and suggestions</li>
+                </ul>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                        <line x1="12" y1="18" x2="12.01" y2="18"/>
+                    </svg>
+                </div>
+                <div class="ab-title">Application &amp; Game Issues</div>
+                <div class="ab-text">
+                    If you experience a problem with an application or game listed on APXMOD, please contact us.
+                </div>
+                <div class="ab-text">
+                    Where possible, include:
+                </div>
+                <ul class="ab-list">
+                    <li>Application or game name</li>
+                    <li>Version</li>
+                    <li>The page URL</li>
+                    <li>Description of the problem</li>
+                    <li>Your Android version</li>
+                    <li>Relevant screenshots or other useful information</li>
+                </ul>
+                <div class="ab-text">
+                    Providing these details can help our team investigate the issue more efficiently.
+                </div>
+                <div class="ab-text">
+                    If your question is about installing an application or game, you may find an immediate answer in our <a href="how-to-install.html" class="hl" style="text-decoration:underline;text-underline-offset:2px;">How to Install</a> guide, where the most common questions and their answers are provided so you can get help right away before contacting us.
+                </div>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                </div>
+                <div class="ab-title">Security Concerns</div>
+                <div class="ab-text">
+                    If you believe that a file or application available through APXMOD may present a security concern, please report it to us as soon as possible.
+                </div>
+                <div class="ab-text">
+                    Please include:
+                </div>
+                <ul class="ab-list">
+                    <li>Application or game name</li>
+                    <li>Relevant page</li>
+                    <li>Version or file information</li>
+                    <li>Description of the security concern</li>
+                    <li>Any supporting evidence available to you</li>
+                </ul>
+                <div class="ab-text">
+                    Security-related reports may be forwarded to the appropriate members of our technical or review team for investigation.
+                </div>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 20h9"/>
+                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                    </svg>
+                </div>
+                <div class="ab-title">Content Corrections</div>
+                <div class="ab-text">
+                    If you identify information that appears to be incorrect, outdated, incomplete, or misleading, we encourage you to let us know.
+                </div>
+                <div class="ab-text">
+                    This may include incorrect:
+                </div>
+                <ul class="ab-list">
+                    <li>Application information</li>
+                    <li>Version information</li>
+                    <li>File size</li>
+                    <li>Android requirements</li>
+                    <li>Developer information</li>
+                    <li>Modification attribution</li>
+                    <li>Description</li>
+                    <li>Features</li>
+                    <li>Other listing details</li>
+                </ul>
+                <div class="ab-text">
+                    Our team may review the information and make appropriate corrections where the information can be reasonably verified.
+                </div>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M14.83 14.83a4 4 0 1 1 0-5.66"/>
+                    </svg>
+                </div>
+                <div class="ab-title">Copyright &amp; DMCA Requests</div>
+                <div class="ab-text">
+                    If you are a copyright holder or authorized representative and believe that content available through APXMOD infringes your rights, you can contact us regarding the matter.
+                </div>
+                <div class="ab-text">
+                    Please provide sufficient information to allow our team to understand and evaluate the request.
+                </div>
+                <div class="ab-text">
+                    Copyright-related requests are handled through our <span class="hl">DMCA Notice</span> procedure and may require specific information or documentation.
+                </div>
+                <div class="ab-text">
+                    For detailed instructions, please refer to our DMCA Notice page.
+                </div>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+                <div class="ab-title">User Account &amp; Community Concerns</div>
+                <div class="ab-text">
+                    If you experience an issue involving your APXMOD account, user reviews, or other community-related features, you can contact our support team.
+                </div>
+                <div class="ab-text">
+                    Please provide relevant information such as your account details and a clear description of the issue.
+                </div>
+                <div class="ab-warning-box">
+                    <strong>Important:</strong> For privacy and security reasons, never send your password, authentication codes, payment credentials, or other sensitive account information by email.
+                </div>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                </div>
+                <div class="ab-title">How to Contact Us</div>
+                <div class="ab-text">
+                    Reach our support team directly by email:
+                </div>
+                <div class="ab-email-box">
+                    <div class="ab-email-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <a class="ab-email-text" href="mailto:support@apxmod.com">support@apxmod.com</a>
+                </div>
+                <div class="ab-text" style="margin-top:14px;">
+                    <strong>Recommended Email Format</strong>
+                </div>
+                <div class="ab-text">
+                    To help us process your request efficiently, we recommend using a clear subject line. For example:
+                </div>
+                <div class="ab-subject-box">
+                    <div class="ab-subject-line">Subject: <span>Application Issue — [Application Name]</span></div>
+                    <div class="ab-subject-line">Subject: <span>Security Concern — [Application Name]</span></div>
+                    <div class="ab-subject-line">Subject: <span>Copyright / DMCA Request — [Content Name]</span></div>
+                    <div class="ab-subject-line">Subject: <span>General Support — APXMOD</span></div>
+                </div>
+                <div class="ab-text" style="margin-top:12px;">
+                    In your message, briefly explain the issue and provide any relevant information or evidence.
+                </div>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <div class="ab-title">Response &amp; Review</div>
+                <div class="ab-text">
+                    Every legitimate request may require a different level of investigation.
+                </div>
+                <div class="ab-text">
+                    General questions may be straightforward to address, while technical, security, copyright, or content-related matters may require additional review by the appropriate members of our team.
+                </div>
+                <div class="ab-text">
+                    We aim to review and respond to legitimate inquiries within <span class="hl">24 hours</span> where reasonably possible.
+                </div>
+                <div class="ab-text">
+                    More complex requests may require additional time when verification, investigation, or supporting information is necessary.
+                </div>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="9 11 12 14 22 4"/>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                    </svg>
+                </div>
+                <div class="ab-title">Before Contacting Us</div>
+                <div class="ab-text">
+                    To help us assist you more effectively, please:
+                </div>
+                <ul class="ab-list">
+                    <li>Clearly describe your issue or request</li>
+                    <li>Include the relevant application, game, or page</li>
+                    <li>Provide screenshots when they help explain the problem</li>
+                    <li>Include relevant technical information for technical issues</li>
+                    <li>Provide supporting documentation for rights-related requests where applicable</li>
+                    <li>Avoid sending passwords or other sensitive credentials</li>
+                </ul>
+                <div class="ab-text">
+                    Incomplete requests may require additional communication before our team can properly investigate the matter.
+                </div>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <polyline points="9 12 11 14 15 10"/>
+                    </svg>
+                </div>
+                <div class="ab-title">Responsible Communication</div>
+                <div class="ab-text">
+                    We welcome genuine questions, feedback, reports, and concerns.
+                </div>
+                <div class="ab-text">
+                    To help our team process requests efficiently, please ensure that communications are accurate, relevant, and respectful.
+                </div>
+                <div class="ab-text">
+                    We reserve the right to disregard communications that are abusive, threatening, intentionally misleading, spam, or unrelated to the operation of APXMOD.
+                </div>
+            </div>
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                </div>
+                <div class="ab-title">Our Commitment</div>
+                <div class="ab-text">
+                    At APXMOD, communication with our users is an important part of maintaining the platform.
+                </div>
+                <div class="ab-text">
+                    Whether you are reporting a problem, requesting a correction, raising a security concern, providing feedback, or simply asking a question, your message helps our team understand how we can continue improving the platform.
+                </div>
+                <div class="ab-text">
+                    We aim to provide a professional, transparent, and responsive support experience as APXMOD continues to grow.
+                </div>
+                <div class="ab-principles">
+                    <div class="ab-principle">
+                        <div class="ab-principle-title">Professional</div>
+                        <div class="ab-principle-desc">Handling every request with care and respect.</div>
+                    </div>
+                    <div class="ab-principle">
+                        <div class="ab-principle-title">Transparent</div>
+                        <div class="ab-principle-desc">Clear communication about outcomes and timelines.</div>
+                    </div>
+                    <div class="ab-principle">
+                        <div class="ab-principle-title">Responsive</div>
+                        <div class="ab-principle-desc">Aiming to reply to legitimate inquiries promptly.</div>
+                    </div>
+                    <div class="ab-principle">
+                        <div class="ab-principle-title">User-Focused</div>
+                        <div class="ab-principle-desc">Your feedback helps improve the platform.</div>
+                    </div>
+                </div>
+                <div class="ab-email-box" style="margin-top:16px;">
+                    <div class="ab-email-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <a class="ab-email-text" href="mailto:support@apxmod.com">support@apxmod.com</a>
+                </div>
+                <div class="ab-vision-quote">
+                    "APXMOD — Discover. Explore. Review. Experience."
+                </div>
+            </div>
+        </div>
+        <div class="ab-ftr">
+            © <span id="cuYear">2026</span> <b>APXMOD</b> — Safe &amp; Verified Android Apps.
+            <span class="ab-made">Built with <span class="ftr-heart">&hearts;</span> for the global gaming community.</span>
+        </div>
+    </div>
+</div>
+<script>
+    function goBack() {
+        if (document.referrer && document.referrer !== '') {
+            history.back();
+        } else {
+            window.location.href = 'index.html';
+        }
+    }
+    (function initHeaderScroll() {
+        var hdrEl = document.getElementById('cuHeader');
+        if (!hdrEl) return;
+        var hdrH = hdrEl.offsetHeight || 56;
+        var lastY = 0, offset = 0, ticking = false;
+        var THRESHOLD = 2;
+        function update() {
+            var curY = window.pageYOffset ||
+                       document.documentElement.scrollTop ||
+                       document.body.scrollTop || 0;
+            var delta = curY - lastY;
+            if (Math.abs(delta) < THRESHOLD && curY > 0) {
+                ticking = false; return;
+            }
+            lastY = curY;
+            if (curY <= 0) offset = 0;
+            else {
+                offset += delta;
+                if (offset < 0) offset = 0;
+                if (offset > hdrH) offset = hdrH;
+            }
+            hdrEl.style.transform = 'translate3d(0,' + (-offset) + 'px,0)';
+            ticking = false;
+        }
+        window.addEventListener('scroll', function() {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(update);
+        }, { passive: true });
+    })();
+    (function initTapBounce() {
+        var SELECTOR = '.ab-back';
+        function triggerBounce(el) {
+            el.classList.remove('tap-bounce');
+            void el.offsetWidth;
+            el.classList.add('tap-bounce');
+            clearTimeout(el._bounceTimer);
+            el._bounceTimer = setTimeout(function() {
+                el.classList.remove('tap-bounce');
+            }, 460);
+        }
+        document.addEventListener('pointerdown', function(e) {
+            var target = e.target.closest(SELECTOR);
+            if (!target) return;
+            triggerBounce(target);
+        }, { passive: true });
+    })();
+    (function() {
+        var y = document.getElementById('cuYear');
+        if (y) y.textContent = new Date().getFullYear();
+    })();
+</script>
+</body>
+</html>

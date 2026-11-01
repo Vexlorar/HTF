@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="color-scheme" content="only light">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="APXMOD Privacy Policy — how we collect, use, protect and manage information when you use the platform.">
+    <title>Privacy Policy — APXMOD</title>
+    <link rel="canonical" href="https://apxmod.com/privacy.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://apxmod.store">
+    <link rel="preload" as="image" href="https://apxmod.store/logo'.png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: only light;
+            --bg    : #edf0f7;
+            --sd    : #c5c9d8;
+            --sl    : #ffffff;
+            --txt   : #1a1d2b;
+            --txt2  : #7a7e92;
+            --red   : #e8192c;
+            --neu-in : inset 4px 4px 10px var(--sd), inset -3px -3px 7px var(--sl);
+            --card3d : 0 2px 0 rgba(255,255,255,0.95) inset,
+                       0 10px 22px rgba(0,0,0,0.11),
+                       0 4px 8px rgba(0,0,0,0.07),
+                       0 1px 3px rgba(0,0,0,0.05);
+            --tap-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-out : cubic-bezier(0.22, 1, 0.36, 1);
+            --hdr-ease : 0.22s;
+        }
+        *, *::before, *::after {
+            box-sizing : border-box;
+            margin     : 0;
+            padding    : 0;
+            -webkit-tap-highlight-color : transparent;
+        }
+        html, body {
+            min-height  : 100%;
+            background  : var(--bg);
+            font-family : 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            color       : var(--txt);
+            -webkit-font-smoothing  : antialiased;
+            -moz-osx-font-smoothing : grayscale;
+        }
+        body { margin: 0; }
+        img { opacity: 0; transition: opacity 0.2s ease; }
+        img.img-loaded { opacity: 1; }
+        ::-webkit-scrollbar { width: 0; height: 0; }
+        @keyframes tapBounce {
+            0%   { transform: scale(1); }
+            25%  { transform: scale(0.86); }
+            55%  { transform: scale(1.08); }
+            80%  { transform: scale(0.98); }
+            100% { transform: scale(1); }
+        }
+        .tap-bounce {
+            animation: tapBounce 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+            will-change: transform;
+        }
+        .pg {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .ab-wrap {
+            flex: 1;
+            background: var(--bg);
+            padding-bottom: 0;
+        }
+        .ab-hdr {
+            background      : #ffffff;
+            padding         : 10px 18px 10px 0;
+            display         : flex;
+            align-items     : center;
+            gap             : 11px;
+            position        : sticky;
+            top             : 0;
+            z-index         : 100;
+            box-shadow      : 0 2px 12px rgba(0,0,0,0.10);
+            transform       : translate3d(0, 0, 0);
+            will-change     : transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transition      : transform var(--hdr-ease) cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .ab-back {
+            width: 38px; height: 38px;
+            margin-left: 9px;
+            border-radius: 11px;
+            background: var(--bg);
+            box-shadow: var(--neu-in);
+            border: none;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            color: var(--txt);
+            transform: translate3d(0,0,0) scale(1);
+            transition: transform 0.16s var(--tap-spring);
+        }
+        .ab-back:active {
+            transform: translate3d(0,0,0) scale(0.85);
+            transition: transform 0.06s ease-out;
+        }
+        .ab-back:focus-visible {
+            outline: 2px solid var(--red);
+            outline-offset: 2px;
+        }
+        .ab-back svg {
+            width: 18px; height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .ab-hdr-title {
+            font-size: 15.5px;
+            font-weight: 900;
+            letter-spacing: -0.2px;
+            color: var(--txt);
+        }
+        @keyframes fadeUp {
+            0%   { opacity: 0; transform: translate3d(0, 22px, 0); }
+            100% { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        .ab-hero {
+            padding: 20px 22px 16px;
+            text-align: center;
+            animation: fadeUp 0.5s var(--ease-out) 0.05s both;
+        }
+        .ab-hero-logo {
+            height: 46px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+            margin: 0 auto 12px;
+            display: block;
+        }
+        .ab-hero-title {
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: -0.3px;
+            line-height: 1.25;
+            color: var(--txt);
+            margin-bottom: 8px;
+        }
+        .ab-hero-sub {
+            font-size: 12px;
+            color: var(--txt2);
+            font-weight: 500;
+            line-height: 1.7;
+            word-spacing: 0.8px;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .ab-updated {
+            display: inline-block;
+            font-size: 10.5px;
+            color: var(--red);
+            background: rgba(232,25,44,0.08);
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .ab-content { padding: 8px 16px 0; }
+        .ab-card {
+            background: linear-gradient(160deg, rgba(255,255,255,0.97), rgba(238,241,250,0.92));
+            border-top: 1.5px solid rgba(255,255,255,1);
+            border-left: 1.5px solid rgba(255,255,255,0.9);
+            border-right: 1.5px solid rgba(220,224,235,0.6);
+            border-bottom: 1.5px solid rgba(200,204,218,0.5);
+            box-shadow: var(--card3d);
+            border-radius: 14px;
+            padding: 22px 20px;
+            margin-bottom: 14px;
+            animation: fadeUp 0.5s var(--ease-out) both;
+        }
+        .ab-card:nth-child(1)  { animation-delay: 0.05s; }
+        .ab-card:nth-child(2)  { animation-delay: 0.09s; }
+        .ab-card:nth-child(3)  { animation-delay: 0.13s; }
+        .ab-card:nth-child(4)  { animation-delay: 0.17s; }
+        .ab-card:nth-child(5)  { animation-delay: 0.21s; }
+        .ab-card:nth-child(6)  { animation-delay: 0.25s; }
+        .ab-card:nth-child(7)  { animation-delay: 0.29s; }
+        .ab-card:nth-child(8)  { animation-delay: 0.33s; }
+        .ab-card:nth-child(9)  { animation-delay: 0.37s; }
+        .ab-card:nth-child(10) { animation-delay: 0.41s; }
+        .ab-card:nth-child(11) { animation-delay: 0.45s; }
+        .ab-card:nth-child(12) { animation-delay: 0.49s; }
+        .ab-card:nth-child(13) { animation-delay: 0.53s; }
+        .ab-card:nth-child(14) { animation-delay: 0.57s; }
+        .ab-card:nth-child(15) { animation-delay: 0.61s; }
+        .ab-card:nth-child(16) { animation-delay: 0.65s; }
+        .ab-card:nth-child(17) { animation-delay: 0.69s; }
+        .ab-card:nth-child(18) { animation-delay: 0.73s; }
+        .ab-card:nth-child(19) { animation-delay: 0.77s; }
+        .ab-card:nth-child(20) { animation-delay: 0.81s; }
+        .ab-icon {
+            width: 42px; height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #ff4040, #cc0000);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 0 #880000, 0 6px 14px rgba(232,25,44,0.32);
+            flex-shrink: 0;
+        }
+        .ab-icon svg {
+            width: 20px; height: 20px;
+            stroke: #ffffff;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .ab-step-num {
+            display: inline-block;
+            font-size: 10px;
+            color: var(--red);
+            background: rgba(232,25,44,0.10);
+            font-weight: 900;
+            letter-spacing: 1.2px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .ab-title {
+            font-size: 16px;
+            font-weight: 900;
+            letter-spacing: -0.25px;
+            color: var(--txt);
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+        .ab-subsection-title {
+            font-size: 14px;
+            font-weight: 900;
+            color: var(--txt);
+            margin-top: 16px;
+            margin-bottom: 10px;
+            letter-spacing: -0.15px;
+        }
+        .ab-text {
+            font-size: 12.5px;
+            color: var(--txt2);
+            font-weight: 500;
+            line-height: 1.8;
+            word-spacing: 0.8px;
+            letter-spacing: 0.05px;
+        }
+        .ab-text + .ab-text { margin-top: 12px; }
+        .ab-text strong { color: var(--txt); font-weight: 800; }
+        .ab-text .hl { color: var(--red); font-weight: 800; }
+        .ab-email-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 14px;
+            padding: 16px 18px;
+            background: linear-gradient(135deg, rgba(232,25,44,0.08), rgba(232,25,44,0.02));
+            border: 1.5px solid rgba(232,25,44,0.22);
+            border-radius: 12px;
+        }
+        .ab-email-icon {
+            width: 38px; height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(145deg, #ff4040, #cc0000);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 3px 0 #880000, 0 4px 10px rgba(232,25,44,0.30);
+        }
+        .ab-email-icon svg {
+            width: 18px; height: 18px;
+            stroke: #ffffff;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .ab-email-text {
+            font-size: 13px;
+            font-weight: 900;
+            color: var(--red);
+            letter-spacing: -0.1px;
+            word-break: break-all;
+            text-decoration: none;
+        }
+        .ab-email-text:hover { text-decoration: underline; }
+        .ab-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+        }
+        .ab-list li {
+            font-size: 12.5px;
+            color: var(--txt2);
+            font-weight: 600;
+            line-height: 1.6;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .ab-list li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 6px;
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #ff4040, #cc0000);
+            box-shadow: 0 2px 5px rgba(232,25,44,0.40);
+        }
+        .ab-vision-quote {
+            margin-top: 14px;
+            padding: 16px 18px;
+            background: linear-gradient(135deg, rgba(232,25,44,0.06), rgba(232,25,44,0.02));
+            border-left: 3px solid var(--red);
+            border-radius: 4px 12px 12px 4px;
+            font-size: 12px;
+            color: var(--txt);
+            font-weight: 600;
+            line-height: 1.7;
+            font-style: italic;
+        }
+        .ab-ftr {
+            text-align: center;
+            padding: 22px 22px 8px;
+            font-size: 11px;
+            color: var(--txt2);
+            font-weight: 600;
+            line-height: 1.7;
+            word-spacing: 0.6px;
+            animation: fadeUp 0.5s var(--ease-out) 0.35s both;
+        }
+        .ab-ftr b { color: var(--red); font-weight: 900; -webkit-text-stroke: .2px var(--red); }
+        .ftr-heart { color: var(--red); }
+        .ab-ftr .ab-made {
+            font-size: 10.5px;
+            font-weight: 700;
+            margin-top: 5px;
+            display: block;
+            line-height: 1.6;
+        }
+        @media (max-width: 380px) {
+            .ab-hdr { padding: 8px 14px 8px 0; gap: 9px; }
+            .ab-back { width: 34px; height: 34px; margin-left: 7px; border-radius: 10px; }
+            .ab-back svg { width: 16px; height: 16px; }
+            .ab-hdr-title { font-size: 14px; }
+            .ab-hero-logo { height: 40px; max-width: 150px; }
+            .ab-hero-title { font-size: 18px; }
+            .ab-hero-sub { font-size: 11px; }
+            .ab-card { padding: 20px 16px; margin-bottom: 12px; }
+            .ab-title { font-size: 15px; }
+            .ab-subsection-title { font-size: 13px; }
+            .ab-text { font-size: 11.5px; line-height: 1.75; }
+            .ab-list li { font-size: 11.5px; padding-left: 22px; }
+            .ab-email-box { padding: 12px 14px; gap: 10px; }
+            .ab-email-icon { width: 34px; height: 34px; }
+            .ab-email-text { font-size: 11.5px; }
+            .ab-vision-quote { font-size: 11.5px; padding: 14px 14px; }
+            .ab-ftr { font-size: 10.5px; padding: 18px 16px 6px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .ab-hero, .ab-card, .ab-ftr { animation: none; }
+            .ab-hdr { transition: none; }
+            .tap-bounce { animation: none !important; }
+        }
+    </style>
+    <noscript><style>img{opacity:1!important}</style></noscript>
+</head>
+<body>
+
+<div class="pg" id="pg-privacy">
+
+    <div class="ab-wrap">
+
+        <div class="ab-hdr" id="ppHeader">
+            <button class="ab-back" onclick="goBack()" aria-label="Back">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="ab-hdr-title">Privacy Policy</div>
+        </div>
+
+        <div class="ab-hero">
+            <img src="https://apxmod.store/logo'.png"
+                 class="ab-hero-logo"
+                 alt="APXMOD"
+                 onload="this.classList.add('img-loaded')"
+                 onerror="this.style.display='none'">
+            <div class="ab-updated">Last Updated: October 2026</div>
+            <div class="ab-hero-title">Privacy Policy</div>
+            <div class="ab-hero-sub">
+                How we collect, use, protect, and manage information when you use the APXMOD platform.
+            </div>
+        </div>
+
+        <div class="ab-content">
+
+            <div class="ab-card">
+                <div class="ab-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <polyline points="9 12 11 14 15 10"/>
+                    </svg>
+                </div>
+                <div class="ab-text">
+                    At APXMOD, we respect the privacy of our users and are committed to handling personal and technical information responsibly. This Privacy Policy explains how information may be collected, used, protected, and managed when you visit or use the APXMOD website, create an account, interact with our content, submit reviews, or contact our support team.
+                </div>
+                <div class="ab-text">
+                    By using APXMOD, you acknowledge that you have read and understood this Privacy Policy.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 1</div>
+                <div class="ab-title">About This Privacy Policy</div>
+                <div class="ab-text">
+                    APXMOD is a digital platform focused on the discovery, organization, review, and presentation of applications, games, and related digital content.
+                </div>
+                <div class="ab-text">
+                    This Privacy Policy is intended to provide transparency regarding the types of information that may be associated with your use of our platform and how that information may be handled.
+                </div>
+                <div class="ab-text">
+                    We aim to collect and use information only for legitimate purposes related to operating, maintaining, securing, improving, and supporting the platform.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 2</div>
+                <div class="ab-title">Information We May Collect</div>
+                <div class="ab-text">
+                    Depending on how you use APXMOD and which features are available, we may receive or process different categories of information.
+                </div>
+
+                <div class="ab-subsection-title">2.1 Account Information</div>
+                <div class="ab-text">
+                    If you create an account on APXMOD, information associated with your account may include:
+                </div>
+                <ul class="ab-list">
+                    <li>Name or display name</li>
+                    <li>Email address</li>
+                    <li>Username or account identifier</li>
+                    <li>Account-related preferences</li>
+                    <li>Profile information you choose to provide</li>
+                    <li>Account activity associated with the platform</li>
+                </ul>
+                <div class="ab-text">
+                    You are responsible for providing accurate information and maintaining the security of your account credentials.
+                </div>
+
+                <div class="ab-subsection-title">2.2 User-Generated Content</div>
+                <div class="ab-text">
+                    When you voluntarily submit content to APXMOD, such as reviews, comments, feedback, reports, or other communications, we may process the information contained in those submissions.
+                </div>
+                <div class="ab-text">
+                    User-generated content may be visible to other users where the relevant feature is designed to make it public.
+                </div>
+                <div class="ab-text">
+                    Please avoid including passwords, authentication codes, payment credentials, private documents, or other highly sensitive information in public reviews or comments.
+                </div>
+
+                <div class="ab-subsection-title">2.3 Support and Communication Information</div>
+                <div class="ab-text">
+                    When you contact our team at:
+                </div>
+                <div class="ab-email-box">
+                    <div class="ab-email-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <a class="ab-email-text" href="mailto:support@apxmod.com">support@apxmod.com</a>
+                </div>
+                <div class="ab-text" style="margin-top:12px;">
+                    we may receive information necessary to understand and respond to your request.
+                </div>
+                <div class="ab-text">
+                    This may include:
+                </div>
+                <ul class="ab-list">
+                    <li>Your email address</li>
+                    <li>Your name or preferred name</li>
+                    <li>The subject and contents of your message</li>
+                    <li>Application or game information</li>
+                    <li>Website page URLs</li>
+                    <li>Device or Android version information you voluntarily provide</li>
+                    <li>Screenshots or files you voluntarily attach</li>
+                    <li>Other information necessary to investigate your request</li>
+                </ul>
+                <div class="ab-text">
+                    We use this information primarily to provide support, investigate reported problems, review content concerns, respond to security reports, and handle other legitimate requests.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 3</div>
+                <div class="ab-title">Technical and Usage Information</div>
+                <div class="ab-text">
+                    When you access a website, certain technical information may be automatically generated or made available through normal web infrastructure.
+                </div>
+                <div class="ab-text">
+                    Depending on the website configuration, this may include information such as:
+                </div>
+                <ul class="ab-list">
+                    <li>IP address</li>
+                    <li>Browser type and version</li>
+                    <li>Device type</li>
+                    <li>Operating system</li>
+                    <li>Language or regional settings</li>
+                    <li>Referring pages</li>
+                    <li>Requested pages or resources</li>
+                    <li>Approximate access time</li>
+                    <li>Basic technical and diagnostic information</li>
+                </ul>
+                <div class="ab-text">
+                    Such information may be used for purposes including:
+                </div>
+                <ul class="ab-list">
+                    <li>Website security</li>
+                    <li>Abuse prevention</li>
+                    <li>Troubleshooting</li>
+                    <li>Performance monitoring</li>
+                    <li>Platform maintenance</li>
+                    <li>Understanding general usage patterns</li>
+                    <li>Improving website functionality</li>
+                </ul>
+                <div class="ab-text">
+                    The exact information collected may vary depending on the technologies and services active on the platform.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 4</div>
+                <div class="ab-title">Cookies and Similar Technologies</div>
+                <div class="ab-text">
+                    APXMOD may use cookies or similar technologies where necessary or useful for operating the website.
+                </div>
+                <div class="ab-text">
+                    These technologies may help with functions such as:
+                </div>
+                <ul class="ab-list">
+                    <li>Maintaining sessions</li>
+                    <li>Remembering preferences</li>
+                    <li>Supporting account functionality</li>
+                    <li>Improving website performance</li>
+                    <li>Understanding website usage</li>
+                    <li>Security and fraud prevention</li>
+                </ul>
+                <div class="ab-text">
+                    Some cookies may be essential for website functionality, while others may depend on optional features or third-party services.
+                </div>
+                <div class="ab-text">
+                    You may be able to control or restrict cookies through your browser settings. Disabling certain cookies may affect the functionality of some parts of the website.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 5</div>
+                <div class="ab-title">How We Use Information</div>
+                <div class="ab-text">
+                    Information associated with your use of APXMOD may be used for legitimate platform-related purposes, including:
+                </div>
+                <ul class="ab-list">
+                    <li>Providing and maintaining website functionality</li>
+                    <li>Creating and managing user accounts</li>
+                    <li>Supporting user reviews and community features</li>
+                    <li>Responding to support requests</li>
+                    <li>Investigating reported problems</li>
+                    <li>Reviewing security concerns</li>
+                    <li>Improving website performance and usability</li>
+                    <li>Detecting abuse, suspicious activity, or unauthorized activity</li>
+                    <li>Maintaining platform security</li>
+                    <li>Correcting inaccurate information</li>
+                    <li>Monitoring technical issues</li>
+                    <li>Communicating important service-related information</li>
+                    <li>Complying with applicable legal obligations</li>
+                    <li>Protecting the rights, security, and integrity of APXMOD and its users</li>
+                </ul>
+                <div class="ab-text">
+                    We do not intend to use personal information for purposes that are unrelated to the operation and legitimate activities of the platform without appropriate notice or legal basis where required.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 6</div>
+                <div class="ab-title">User Reviews and Public Information</div>
+                <div class="ab-text">
+                    APXMOD provides user-review and community-related functionality.
+                </div>
+                <div class="ab-text">
+                    When you voluntarily submit a review or other content intended for public display, that content may be visible to other visitors or users of the platform.
+                </div>
+                <div class="ab-text">
+                    Please consider carefully what information you include in publicly visible content.
+                </div>
+                <div class="ab-text">
+                    APXMOD may moderate, restrict, edit, or remove user-generated content where reasonably necessary for security, accuracy, legal compliance, abuse prevention, or enforcement of applicable platform policies.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 7</div>
+                <div class="ab-title">Information Sharing</div>
+                <div class="ab-text">
+                    APXMOD does not treat user information as something to be publicly disclosed without reason.
+                </div>
+                <div class="ab-text">
+                    Information may be shared or made available where reasonably necessary for legitimate purposes, such as:
+                </div>
+                <ul class="ab-list">
+                    <li>Operating and maintaining the platform</li>
+                    <li>Providing technical infrastructure or services</li>
+                    <li>Security and abuse prevention</li>
+                    <li>Responding to lawful requests</li>
+                    <li>Complying with legal obligations</li>
+                    <li>Protecting users, the platform, or other parties</li>
+                    <li>Investigating security, copyright, or legal complaints</li>
+                </ul>
+                <div class="ab-text">
+                    Where third-party service providers are involved in supporting website functionality, their handling of information may also be subject to their own privacy policies and terms.
+                </div>
+                <div class="ab-text">
+                    We do not claim that information can never be disclosed; lawful requests, security requirements, and other legitimate circumstances may require appropriate disclosure.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 8</div>
+                <div class="ab-title">Third-Party Services and Links</div>
+                <div class="ab-text">
+                    APXMOD may contain links to third-party websites, application stores, forums, source pages, developer pages, or other external services.
+                </div>
+                <div class="ab-text">
+                    These third-party services are not controlled by APXMOD.
+                </div>
+                <div class="ab-text">
+                    Once you leave our website or interact directly with a third-party service, that service's own privacy policy, terms, technologies, and data practices may apply.
+                </div>
+                <div class="ab-text">
+                    We encourage users to review the privacy policies of third-party services before providing them with personal information.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 9</div>
+                <div class="ab-title">Data Security</div>
+                <div class="ab-text">
+                    Protecting information and maintaining the security of our platform are important priorities.
+                </div>
+                <div class="ab-text">
+                    APXMOD may use reasonable technical, administrative, and organizational measures designed to protect information against unauthorized access, misuse, alteration, loss, or disclosure.
+                </div>
+                <div class="ab-text">
+                    However, no website, online service, storage system, or method of electronic transmission can guarantee absolute security.
+                </div>
+                <div class="ab-text">
+                    For this reason, users should also take reasonable steps to protect their own accounts and devices.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 10</div>
+                <div class="ab-title">Account Security</div>
+                <div class="ab-text">
+                    If you create an account on APXMOD, you are responsible for maintaining the confidentiality of your login credentials and for activity occurring through your account, subject to applicable law.
+                </div>
+                <div class="ab-text">
+                    You should:
+                </div>
+                <ul class="ab-list">
+                    <li>Use a strong and unique password</li>
+                    <li>Avoid sharing your password</li>
+                    <li>Never provide authentication codes to another person</li>
+                    <li>Log out when using shared devices</li>
+                    <li>Contact us if you believe your account has been compromised</li>
+                </ul>
+                <div class="ab-text">
+                    If we become aware of a security issue affecting an account or platform service, we may take appropriate measures to protect users and the platform.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 11</div>
+                <div class="ab-title">Data Retention</div>
+                <div class="ab-text">
+                    We may retain information for as long as reasonably necessary for the purposes described in this Privacy Policy, including:
+                </div>
+                <ul class="ab-list">
+                    <li>Providing services</li>
+                    <li>Maintaining account functionality</li>
+                    <li>Supporting legitimate business and operational needs</li>
+                    <li>Resolving disputes</li>
+                    <li>Maintaining security records</li>
+                    <li>Preventing abuse</li>
+                    <li>Meeting legal or regulatory requirements</li>
+                    <li>Maintaining appropriate records of communications and reports</li>
+                </ul>
+                <div class="ab-text">
+                    Retention periods may vary depending on the type of information and the reason it was collected.
+                </div>
+                <div class="ab-text">
+                    When information is no longer reasonably required for a legitimate purpose, it may be deleted, anonymized, or otherwise handled in accordance with applicable requirements.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 12</div>
+                <div class="ab-title">Children's Privacy</div>
+                <div class="ab-text">
+                    APXMOD is not intended to encourage children to provide unnecessary personal information.
+                </div>
+                <div class="ab-text">
+                    If a parent or guardian believes that a child has provided personal information to the platform in circumstances where such collection is not appropriate, they may contact us at:
+                </div>
+                <div class="ab-email-box">
+                    <div class="ab-email-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <a class="ab-email-text" href="mailto:support@apxmod.com">support@apxmod.com</a>
+                </div>
+                <div class="ab-text" style="margin-top:12px;">
+                    We will review legitimate requests and take appropriate action where required by applicable law.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 13</div>
+                <div class="ab-title">Your Privacy Rights</div>
+                <div class="ab-text">
+                    Depending on your location and applicable law, you may have certain rights concerning your personal information.
+                </div>
+                <div class="ab-text">
+                    These may include rights to:
+                </div>
+                <ul class="ab-list">
+                    <li>Request access to certain personal information</li>
+                    <li>Request correction of inaccurate information</li>
+                    <li>Request deletion where legally applicable</li>
+                    <li>Request information about how your data is handled</li>
+                    <li>Object to or restrict certain processing where applicable</li>
+                    <li>Withdraw consent where processing is based on consent</li>
+                    <li>Submit a privacy-related complaint or inquiry</li>
+                </ul>
+                <div class="ab-text">
+                    The availability and scope of these rights depend on applicable law and the circumstances of the request.
+                </div>
+                <div class="ab-text">
+                    To make a privacy-related request, contact:
+                </div>
+                <div class="ab-email-box">
+                    <div class="ab-email-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <a class="ab-email-text" href="mailto:support@apxmod.com">support@apxmod.com</a>
+                </div>
+                <div class="ab-text" style="margin-top:12px;">
+                    We may need sufficient information to verify the request and protect against unauthorized access to another person's information.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 14</div>
+                <div class="ab-title">Data Deletion Requests</div>
+                <div class="ab-text">
+                    If you would like to request deletion of information associated with your account or communications with APXMOD, you may contact our team at:
+                </div>
+                <div class="ab-email-box">
+                    <div class="ab-email-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <a class="ab-email-text" href="mailto:support@apxmod.com">support@apxmod.com</a>
+                </div>
+                <div class="ab-text" style="margin-top:12px;">
+                    Please clearly identify the relevant account or information and explain what you would like removed.
+                </div>
+                <div class="ab-text">
+                    Some information may need to be retained where required by law, necessary for legitimate security purposes, required to resolve disputes, or otherwise subject to a lawful retention requirement.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 15</div>
+                <div class="ab-title">International Access</div>
+                <div class="ab-text">
+                    APXMOD may be accessed by users from different countries and regions.
+                </div>
+                <div class="ab-text">
+                    Depending on the infrastructure, hosting arrangements, service providers, or technologies used to operate the platform, information may potentially be processed or stored in locations outside your country.
+                </div>
+                <div class="ab-text">
+                    Where applicable, we aim to handle such processing in accordance with relevant legal and security requirements.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 16</div>
+                <div class="ab-title">Privacy and Security Reports</div>
+                <div class="ab-text">
+                    If you discover a potential privacy or security issue involving APXMOD, we encourage you to report it responsibly.
+                </div>
+                <div class="ab-text">
+                    Please contact:
+                </div>
+                <div class="ab-email-box">
+                    <div class="ab-email-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <a class="ab-email-text" href="mailto:support@apxmod.com">support@apxmod.com</a>
+                </div>
+                <div class="ab-text" style="margin-top:12px;">
+                    When reporting an issue, provide as much relevant information as reasonably possible, such as:
+                </div>
+                <ul class="ab-list">
+                    <li>Affected page or feature</li>
+                    <li>Description of the issue</li>
+                    <li>Steps to reproduce the issue, where applicable</li>
+                    <li>Screenshots or supporting evidence</li>
+                    <li>Relevant account or technical information, without sending passwords or authentication codes</li>
+                </ul>
+                <div class="ab-text">
+                    Our team will review legitimate reports and take appropriate action based on the nature and severity of the issue.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 17</div>
+                <div class="ab-title">Changes to This Privacy Policy</div>
+                <div class="ab-text">
+                    APXMOD may update this Privacy Policy from time to time as the platform, features, technologies, or legal requirements evolve.
+                </div>
+                <div class="ab-text">
+                    When changes are made, the updated version may be published on this page with a revised Last Updated date.
+                </div>
+                <div class="ab-text">
+                    We encourage users to review this page periodically to remain informed about our privacy practices.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 18</div>
+                <div class="ab-title">Contact Us</div>
+                <div class="ab-text">
+                    If you have questions, concerns, requests, or complaints regarding this Privacy Policy or privacy practices associated with APXMOD, please contact our team:
+                </div>
+                <div class="ab-email-box">
+                    <div class="ab-email-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <a class="ab-email-text" href="mailto:support@apxmod.com">support@apxmod.com</a>
+                </div>
+                <div class="ab-text" style="margin-top:12px;">
+                    For faster assistance, please include a clear subject and enough information for our team to understand your request.
+                </div>
+                <div class="ab-text">
+                    We aim to respond to legitimate inquiries within <span class="hl">24 hours</span> where reasonably possible, although complex privacy, security, legal, or technical matters may require additional time.
+                </div>
+            </div>
+
+            <div class="ab-card">
+                <div class="ab-step-num">Section 19</div>
+                <div class="ab-title">Our Privacy Commitment</div>
+                <div class="ab-text">
+                    APXMOD is committed to maintaining a responsible approach to privacy, security, transparency, and user trust.
+                </div>
+                <div class="ab-text">
+                    As our platform continues to evolve, we will continue reviewing our practices and improving the way information is handled, protected, and communicated to our users.
+                </div>
+                <div class="ab-vision-quote">
+                    "APXMOD — Privacy, Security, Transparency."
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ab-ftr">
+            © <span id="ppYear">2026</span> <b>APXMOD</b> — Safe &amp; Verified Android Apps.
+            <span class="ab-made">Built with <span class="ftr-heart">&hearts;</span> for the global gaming community.</span>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    function goBack() {
+        if (document.referrer && document.referrer !== '') {
+            history.back();
+        } else {
+            window.location.href = 'index.html';
+        }
+    }
+    (function initHeaderScroll() {
+        var hdrEl = document.getElementById('ppHeader');
+        if (!hdrEl) return;
+        var hdrH = hdrEl.offsetHeight || 56;
+        var lastY = 0, offset = 0, ticking = false;
+        var THRESHOLD = 2;
+        window.addEventListener('resize', function() {
+            hdrH = hdrEl.offsetHeight || 56;
+        }, { passive: true });
+        function update() {
+            var curY = window.pageYOffset ||
+                       document.documentElement.scrollTop || 0;
+            var delta = curY - lastY;
+            if (Math.abs(delta) < THRESHOLD && curY > 0) {
+                ticking = false; return;
+            }
+            lastY = curY;
+            if (curY <= 0) offset = 0;
+            else {
+                offset += delta;
+                if (offset < 0) offset = 0;
+                if (offset > hdrH) offset = hdrH;
+            }
+            hdrEl.style.transform = 'translate3d(0,' + (-offset) + 'px,0)';
+            ticking = false;
+        }
+        window.addEventListener('scroll', function() {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(update);
+        }, { passive: true });
+    })();
+    (function initTapBounce() {
+        var SELECTOR = '.ab-back';
+        function triggerBounce(el) {
+            el.classList.remove('tap-bounce');
+            void el.offsetWidth;
+            el.classList.add('tap-bounce');
+            clearTimeout(el._bounceTimer);
+            el._bounceTimer = setTimeout(function() {
+                el.classList.remove('tap-bounce');
+            }, 460);
+        }
+        document.addEventListener('pointerdown', function(e) {
+            var target = e.target.closest(SELECTOR);
+            if (!target) return;
+            triggerBounce(target);
+        }, { passive: true });
+    })();
+    (function() {
+        var y = document.getElementById('ppYear');
+        if (y) y.textContent = new Date().getFullYear();
+    })();
+</script>
+
+</body>
+</html>
